@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raising Awareness Together — Founded from the heart, built for humanity</title>
+<meta property="og:image" content="https://www.raisingawarenesstogether.com/images/cosmos-enlightened.jpg">
+<meta property="og:title" content="Raising Awareness Together">
+<meta property="og:description" content="Founded from the heart, built for humanity. Free worlds for the hard nights, courses for the climb after.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#070216; --deep:#120A2E; --card:#1A1040;
+    --star:#F3EEFF; --muted:#A99FCE;
+    --gold:#FFCB6B; --gold2:#FF9E3D; --violet:#8B5CFF; --magenta:#FF4FD8; --cyan:#4EE8FF; --emerald:#3BF0B0;
+    --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--void);color:var(--star);font-family:Inter,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:Cinzel,Georgia,serif;font-weight:500;line-height:1.14}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .glow-text{background:linear-gradient(92deg,var(--gold) 0%,var(--magenta) 45%,var(--violet) 75%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* animated starfield */
+  .stars{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(1.4px 1.4px at 20% 30%,rgba(255,255,255,.85),transparent),
+                     radial-gradient(1.2px 1.2px at 70% 12%,rgba(255,240,200,.8),transparent),
+                     radial-gradient(1.6px 1.6px at 45% 68%,rgba(200,220,255,.75),transparent),
+                     radial-gradient(1.1px 1.1px at 85% 55%,rgba(255,210,255,.8),transparent),
+                     radial-gradient(1.3px 1.3px at 12% 82%,rgba(170,255,255,.7),transparent),
+                     radial-gradient(1px 1px at 60% 92%,rgba(255,255,255,.6),transparent);
+    background-size:900px 900px;animation:twinkle 5s ease-in-out infinite alternate}
+  @keyframes twinkle{from{opacity:.45}to{opacity:.95}}
+  main,header,footer{position:relative;z-index:1}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:17px 34px;border-radius:999px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:.28s;position:relative;overflow:hidden}
+  .btn-primary{background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 55%,var(--gold) 100%);color:#1B0F00;box-shadow:0 0 0 rgba(255,203,107,.6)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(255,158,61,.45)}
+  .btn-primary:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);animation:shine 3.4s ease-in-out infinite}
+  @keyframes shine{0%{left:-60%}45%{left:130%}100%{left:130%}}
+  .btn-magic{border:1px solid rgba(139,92,255,.65);color:#EDE6FF;background:rgba(139,92,255,.12)}
+  .btn-magic:hover{border-color:var(--cyan);box-shadow:0 0 34px rgba(78,232,255,.35)}
+
+  header{position:fixed;inset:0 0 auto 0;z-index:60;backdrop-filter:blur(18px);background:rgba(7,2,22,.62);border-bottom:1px solid rgba(139,92,255,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:var(--max);margin:0 auto;padding:0 28px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:Cinzel,serif;font-size:16px;letter-spacing:.06em}
+  .brand img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 22px rgba(255,203,107,.55)}
+  .nav nav{display:flex;gap:28px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#5C5750}
+  .nav nav a:hover{color:var(--gold)}
+  @media(max-width:900px){.nav nav{display:none}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;transform:scale(1.03);filter:brightness(1.06) saturate(1.18);animation:drift 28s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:scale(1.04) translateY(0)}to{transform:scale(1.1) translateY(-14px)}}
+  .hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(96deg,rgba(7,2,22,.9) 0%,rgba(7,2,22,.74) 22%,rgba(7,2,22,.34) 42%,rgba(7,2,22,.04) 62%,transparent 78%)}
+  .hero:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 50% at 80% 30%,rgba(255,158,61,.16),transparent 60%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:116px}
+  .hero-copy{max-width:620px;padding:44px 40px;border-radius:26px;background:linear-gradient(160deg,rgba(9,4,24,.72),rgba(9,4,24,.5));backdrop-filter:blur(9px);border:1px solid rgba(139,92,255,.28);box-shadow:0 30px 90px rgba(7,2,22,.6)}
+  .hero h1{font-size:clamp(40px,6vw,78px);margin:20px 0 22px;text-shadow:0 6px 40px rgba(7,2,22,.9)}
+  .hero p.lead{font-size:18.5px;color:#D9D0F2;max-width:520px;margin-bottom:36px}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero .micro{margin-top:24px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .hero .micro b{color:var(--emerald)}
+  .orb{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55;z-index:1}
+  .burst{position:absolute;z-index:1;top:-14%;right:12%;width:620px;height:620px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,248,225,.92) 0%,rgba(255,203,107,.55) 18%,rgba(255,158,61,.28) 38%,transparent 68%);
+    filter:blur(26px);animation:pulse 4.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:.95;transform:scale(1.06)}}
+  .orb.a{width:340px;height:340px;background:radial-gradient(circle,#FF9E3D,transparent 70%);top:16%;right:8%;animation:float 12s ease-in-out infinite alternate}
+  .orb.b{width:300px;height:300px;background:radial-gradient(circle,#8B5CFF,transparent 70%);bottom:10%;left:-4%;animation:float 15s ease-in-out infinite alternate-reverse}
+  @keyframes float{from{transform:translateY(-14px)}to{transform:translateY(18px)}}
+
+  /* ticker */
+  .ticker{border-top:1px solid rgba(139,92,255,.3);border-bottom:1px solid rgba(139,92,255,.3);background:rgba(18,10,46,.75);overflow:hidden;padding:13px 0}
+  .ticker-track{display:flex;gap:46px;white-space:nowrap;animation:slide 30s linear infinite;font-family:Cinzel,serif;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#6E6862}
+  .ticker-track span{color:var(--gold)}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section{position:relative}
+  .pad{padding:120px 0}
+  .head{max-width:720px;margin-bottom:56px}
+  .head h2{font-size:clamp(32px,4.6vw,56px);margin:16px 0}
+  .head p{color:var(--muted);font-size:16px}
+
+  /* WORLDS grid */
+  .worlds{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .world{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(139,92,255,.4);background:linear-gradient(165deg,rgba(26,16,64,.95),rgba(10,5,28,.95));padding:30px;transition:.32s;display:flex;flex-direction:column;justify-content:space-between;min-height:230px}
+  .world:hover{transform:translateY(-5px);border-color:rgba(255,203,107,.65);box-shadow:0 26px 60px rgba(139,92,255,.28),0 0 0 1px rgba(255,203,107,.25) inset}
+  .world:after{content:"";position:absolute;inset:-40% -10% auto auto;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,255,.5),transparent 68%);filter:blur(22px);opacity:.6;transition:.32s}
+  .world:hover:after{opacity:1;background:radial-gradient(circle,rgba(255,158,61,.55),transparent 68%)}
+  .world h3{font-size:22px;margin-bottom:8px;position:relative;z-index:2}
+  .world p{font-size:13.5px;color:#6E6862;position:relative;z-index:2}
+  .badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:999px;margin-bottom:14px;position:relative;z-index:2}
+  .badge.free{background:rgba(59,240,176,.14);color:#6CFFC6;border:1px solid rgba(59,240,176,.45)}
+  .badge.hot{background:rgba(255,79,216,.15);color:#FF8EE6;border:1px solid rgba(255,79,216,.5)}
+  .badge.new{background:rgba(78,232,255,.14);color:#8FF2FF;border:1px solid rgba(78,232,255,.45)}
+  .w3{grid-column:span 3}.w4{grid-column:span 4}.w6{grid-column:span 6}
+  @media(max-width:1000px){.w3,.w4,.w6{grid-column:span 6}}
+  @media(max-width:660px){.w3,.w4,.w6{grid-column:span 12}}
+
+  /* COURSES: prize tiers */
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .tier{position:relative;border-radius:22px;padding:44px 38px;background:linear-gradient(170deg,rgba(26,16,64,.96),rgba(9,4,24,.98));border:1px solid rgba(139,92,255,.45);overflow:hidden;transition:.3s}
+  .tier:hover{transform:translateY(-4px);box-shadow:0 30px 70px rgba(139,92,255,.3)}
+  .tier.vip{border-color:rgba(255,203,107,.6);background:linear-gradient(170deg,rgba(58,30,10,.55),rgba(26,16,64,.97) 45%,rgba(9,4,24,.98))}
+  .tier .tag{position:absolute;top:0;right:0;background:linear-gradient(100deg,var(--gold),var(--gold2));color:#231400;font-size:10.5px;font-weight:800;letter-spacing:.16em;padding:9px 18px;border-bottom-left-radius:14px;text-transform:uppercase}
+  .tier h3{font-size:26px;margin:14px 0 12px}
+  .tier .price{font-family:Cinzel,serif;font-size:58px;line-height:1;margin:18px 0 4px}
+  .tier .price s{font-size:18px;color:var(--muted);margin-left:12px;vertical-align:middle}
+  .tier ul{list-style:none;margin:22px 0 28px;display:grid;gap:11px;font-size:14px;color:#5C5750}
+  .tier li:before{content:"✦";color:var(--gold);margin-right:11px}
+  .tier .btn{width:100%;justify-content:center}
+  @media(max-width:860px){.tiers{grid-template-columns:1fr}}
+
+  /* STORY band with islands art */
+  .band{position:relative;overflow:hidden;border-radius:26px;border:1px solid rgba(139,92,255,.4);padding:70px 56px}
+  .band img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+  .band:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,2,22,.94) 0%,rgba(7,2,22,.78) 46%,rgba(7,2,22,.25) 100%)}
+  .band .inner{position:relative;z-index:2;max-width:560px}
+  .band h2{font-size:clamp(28px,3.8vw,44px);margin:14px 0 18px}
+  .steps{margin-top:26px;display:grid;gap:16px}
+  .step{display:flex;gap:16px;align-items:flex-start}
+  .step .num{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:Cinzel,serif;color:#241500;background:linear-gradient(140deg,var(--gold),var(--gold2));box-shadow:0 0 22px rgba(255,158,61,.5);font-size:15px}
+  .step p{font-size:14.5px;color:#5C5750}
+  .step b{color:#fff}
+
+  /* welcome / capture */
+  .welcome{display:grid;grid-template-columns:1fr .9fr;gap:60px;align-items:center}
+  .card-glow{position:relative;border-radius:24px;padding:40px;background:linear-gradient(170deg,rgba(26,16,64,.97),rgba(9,4,24,.99));border:1px solid rgba(255,203,107,.45);box-shadow:0 0 80px rgba(255,158,61,.18)}
+  .card-glow h3{font-size:24px;margin-bottom:8px}
+  .card-glow input{width:100%;padding:16px 18px;border-radius:12px;background:rgba(7,2,22,.85);border:1px solid rgba(139,92,255,.5);color:var(--star);font-family:inherit;font-size:15px;margin-bottom:13px}
+  .card-glow input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,203,107,.15)}
+  .card-glow .btn{width:100%;justify-content:center}
+  .card-glow small{display:block;margin-top:14px;color:var(--muted);font-size:12px;text-align:center}
+  .perks{list-style:none;display:grid;gap:16px;margin-top:8px}
+  .perks li{display:flex;gap:14px;font-size:15px;color:#5C5750}
+  .perks .ic{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(139,92,255,.16);border:1px solid rgba(139,92,255,.45);color:var(--cyan);font-size:15px}
+
+  /* give */
+  .give{position:relative;overflow:hidden;text-align:center;padding:140px 0}
+  .give img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72}
+  .give:after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 46%,rgba(7,2,22,.28),rgba(7,2,22,.9) 78%)}
+  .give .wrap{position:relative;z-index:2;max-width:680px}
+  .give h2{font-size:clamp(32px,5vw,58px);margin-bottom:18px;text-shadow:0 8px 44px rgba(7,2,22,.95)}
+  .give p{color:#4A453F;margin-bottom:34px;font-size:17px}
+
+  footer{border-top:1px solid rgba(139,92,255,.3);padding:64px 0 40px;color:var(--muted);font-size:14px}
+  .foot{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap}
+  .foot .cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot h5{color:var(--star);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+  .foot ul{list-style:none;display:grid;gap:9px}
+  .foot a:hover{color:var(--gold)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,255,.6),transparent);margin:40px 0 24px}
+
+  .sec-art-wrap{position:relative;overflow:hidden}
+  .sec-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(1.25) contrast(1.05) brightness(1.08)}
+  .sec-art-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,2,22,.86),rgba(7,2,22,.48) 45%,rgba(7,2,22,.88))}
+  .sec-art-wrap > .wrap{position:relative;z-index:2}
+  .sec-banner{position:relative;height:330px;border-radius:24px;overflow:hidden;margin-bottom:56px;border:1px solid rgba(139,92,255,.45);box-shadow:0 30px 90px rgba(7,2,22,.6)}
+  .sec-banner img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block;filter:saturate(1.2) brightness(1.06)}
+  .sec-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,2,22,.15),rgba(7,2,22,.72))}
+  .sec-banner .lbl{position:absolute;z-index:2;left:34px;bottom:28px}
+  .med-strip{position:relative;height:420px;overflow:hidden;display:grid;place-items:center;text-align:center}
+  .med-strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+  .med-strip:after{content:"";position:absolute;inset:0;background:radial-gradient(62% 72% at 50% 50%,rgba(7,2,22,.08),rgba(7,2,22,.72))}
+  .med-strip .inner{position:relative;z-index:2;max-width:660px;padding:0 28px}
+  .med-strip h2{font-size:clamp(26px,3.4vw,42px);margin-bottom:10px}
+  .med-strip p{color:#D8CFF0;font-size:15px}
+  .portrait-card{border-radius:22px;overflow:hidden;border:1px solid rgba(139,92,255,.45);box-shadow:0 30px 80px rgba(139,92,255,.22);margin-top:26px}
+  .portrait-card img{width:100%;display:block}
+
+
+  .hero-copy{max-width:700px}
+  .hero h1{font-size:clamp(33px,4.6vw,58px);margin:18px 0 20px}
+  .hero .lead-sub{font-size:15.5px;color:#6E6862;max-width:560px;margin-top:-16px;margin-bottom:34px}
+  .lead-form{display:block}
+  .lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .lead-form button.btn{border:0;cursor:pointer;font-family:inherit;margin-top:4px}
+  .lead-form button.btn[disabled]{opacity:.6;cursor:default;pointer-events:none}
+  .lead-form small{display:block;margin-top:14px;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+  .form-msg{margin-top:14px;font-size:13.5px;min-height:18px;line-height:1.5;color:var(--muted)}
+  .form-msg.ok{color:var(--emerald)}
+  .form-msg.err{color:#FF95A7}
+  .card-glow textarea,.card-glow select{width:100%;padding:16px 18px;border-radius:12px;background:rgba(7,2,22,.85);border:1px solid rgba(139,92,255,.5);color:var(--star);font-family:inherit;font-size:15px;margin-bottom:13px}
+  .card-glow textarea{min-height:104px;resize:vertical}
+  .card-glow textarea:focus,.card-glow select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,203,107,.15)}
+  .build-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:start}
+  @media(max-width:900px){.build-grid{grid-template-columns:1fr;gap:34px}}
+  .band{border-top:1px solid rgba(139,92,255,.28);border-bottom:1px solid rgba(139,92,255,.28);background:rgba(18,10,46,.62);padding:34px 0}
+  .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+  .band h3{font-family:Cinzel,serif;font-size:clamp(19px,2.3vw,27px);line-height:1.25}
+  .band p{color:var(--muted);font-size:13.5px;margin-top:6px}
+
+  :target{scroll-margin-top:129px}
+
+  /* ---- COURSE VIEW ---- */
+  .cv{position:fixed;inset:0;z-index:200;background:var(--void);overflow-y:auto;display:none;-webkit-overflow-scrolling:touch}
+  .cv.open{display:block}
+  .cv-top{position:sticky;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 28px;background:rgba(7,2,22,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(139,92,255,.28)}
+  .cv-back{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#5C5750;border:1px solid rgba(139,92,255,.5);border-radius:999px;padding:9px 18px;transition:.25s}
+  .cv-back:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 24px rgba(78,232,255,.3)}
+  .cv-brand{display:flex;align-items:center;gap:10px;font-family:Cinzel,serif;font-size:13.5px;letter-spacing:.05em;color:#E7DFFF}
+  .cv-brand img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 18px rgba(255,203,107,.5)}
+  .cv-hero{position:relative;height:min(54vh,460px);overflow:hidden;border-bottom:1px solid rgba(139,92,255,.35)}
+  .cv-hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(1.16) brightness(1.05)}
+  .cv-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,2,22,.22),rgba(7,2,22,.94))}
+  .cv-hero .inner{position:absolute;z-index:2;left:0;right:0;bottom:0;max-width:var(--max);margin:0 auto;padding:0 28px 30px}
+  .cv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .cv-chip{font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,203,107,.55);color:var(--gold);background:rgba(255,203,107,.1)}
+  .cv-chip.alt{border-color:rgba(78,232,255,.5);color:var(--cyan);background:rgba(78,232,255,.1)}
+  .cv h1{font-size:clamp(27px,4.3vw,50px);text-shadow:0 14px 50px rgba(7,2,22,.9)}
+  .cv-body{max-width:840px;margin:0 auto;padding:40px 28px 100px}
+  .cv-body .lead2{color:#5C5750;font-size:16.5px}
+  .cv-h{font-family:Cinzel,serif;font-size:21px;margin:36px 0 14px;letter-spacing:.01em}
+  .cv-list{list-style:none;display:grid;gap:12px}
+  .cv-list li{position:relative;padding-left:30px;color:#5C5750;font-size:15.5px}
+  .cv-list li:before{content:"\2726";position:absolute;left:0;top:0;color:var(--gold)}
+  .cv-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .cv-note{margin-top:18px;font-size:13px;color:var(--muted)}
+  .cv-help{margin-top:28px;padding:16px 18px;border-radius:14px;border:1px solid rgba(255,79,216,.45);background:rgba(255,79,216,.09);color:#F5DCF4;font-size:14.5px}
+  .cv-more{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan)}
+  .cv-more:hover{color:#fff}
+  body.cv-lock{overflow:hidden}
+
+  /* ---- CRISIS STRIP ---- */
+  .crisisbar{background:rgba(26,16,64,.92);border-top:1px solid rgba(255,79,216,.22);border-bottom:1px solid rgba(255,79,216,.3);padding:9px 18px;text-align:center;font-size:12.5px;color:#5C5750;line-height:1.5}
+  .crisisbar a{color:var(--cyan);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .crisisbar a:hover{color:#fff}
+  .cv-crisis{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#FF8EE6;border:1px solid rgba(255,79,216,.45);border-radius:999px;padding:8px 14px;background:rgba(255,79,216,.1);white-space:nowrap}
+  .cv-crisis:hover{color:#fff;border-color:var(--cyan)}
+  .cv-give{margin-top:34px;padding:26px 26px 24px;border-radius:16px;border:1px solid rgba(255,79,216,.42);background:linear-gradient(140deg,rgba(58,20,58,.5),rgba(18,10,46,.92))}
+  .cv-give p{color:#EEDDF5;font-size:14.5px;margin-bottom:18px}
+  @media(max-width:660px){.cv-crisis{display:none}}
+  @media(max-width:900px){.crisisbar{font-size:11.5px;padding:8px 14px}}
+
+  /* ===== OLD-SITE THEME (light, heart-first) ===== */
+  :root{--void:#FCFBF8;--deep:#FFFFFF;--card:#FFFFFF;--star:#16130F;--muted:#6E6862;
+        --gold:#0089BF;--gold2:#00A9E0;--violet:#00A9E0;--magenta:#D81B60;--cyan:#0092CC;--emerald:#0E9F6E}
+  body{background:#FCFBF8;color:#16130F}
+  .stars{display:none}
+  h1,h2,h3,.serif{font-family:Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .eyebrow{color:#8A8378;font-family:"JetBrains Mono",ui-monospace,monospace;letter-spacing:.26em;font-size:10.5px}
+  .glow-text{background:none;color:#0092CC;-webkit-text-fill-color:#0092CC}
+  a{color:inherit}
+  header{background:rgba(252,251,248,.9);border-bottom:1px solid #EAE5DC;backdrop-filter:blur(14px)}
+  .brand{color:#16130F}
+  .nav nav{color:#5C5750;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em}
+  .nav nav a:hover{color:#0092CC}
+  .crisisbar{background:#F3EFE7;border-top:1px solid #EAE5DC;border-bottom:1px solid #EAE5DC;color:#5C5750}
+  .crisisbar a{color:#0092CC}
+
+  /* HERO (old layout) */
+  .hero{min-height:0;display:block;text-align:center;padding:158px 0 104px;background:linear-gradient(180deg,#FCFBF8 0%,#F7F5EF 100%);overflow:hidden}
+  .hero:before,.hero:after{display:none}
+  .hero-bg{display:none}
+  .hero .wrap{padding-top:0;position:relative;z-index:2}
+  .hero-copy{max-width:880px;margin:0 auto;padding:0;background:none;border:0;box-shadow:none;backdrop-filter:none}
+  .hero .pill{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#6E6862;border:1px solid #E2DCD1;border-radius:999px;padding:9px 20px;background:#fff}
+  .hero h1{font-size:clamp(42px,8.2vw,104px);line-height:.96;letter-spacing:-.04em;margin:26px 0 24px;color:#16130F;text-shadow:none}
+  .hero .quote{max-width:660px;margin:0 auto 36px;font-size:clamp(16px,2vw,19.5px);line-height:1.72;color:#7E786F}
+  .hero .hl{color:#0092CC}
+  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero .micro{margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8A8378}
+  .hero .micro b{display:none}
+  .hero .g{position:absolute;z-index:1;border-radius:50%;overflow:hidden;pointer-events:none;opacity:.95}
+  .hero .g img{width:100%;height:100%;object-fit:cover;display:block}
+  .g-left{width:min(30vw,400px);aspect-ratio:1;left:-7%;top:42%;box-shadow:0 40px 100px rgba(22,19,15,.18);opacity:.9}
+  .g-right{width:min(25vw,330px);aspect-ratio:1;right:-5%;top:6%;box-shadow:0 40px 100px rgba(22,19,15,.16);opacity:.85}
+  @media(max-width:980px){.hero .g{display:none}.hero{padding:140px 0 84px}}
+
+  /* FOUNDER NOTE (old page 2) */
+  .founder{background:#fff;border-top:1px solid #EFEAE1;border-bottom:1px solid #EFEAE1;padding:92px 0 96px;text-align:center}
+  .founder .inner{max-width:680px;margin:0 auto;padding:0 28px}
+  .founder .globe{font-size:30px;line-height:1;margin-bottom:30px}
+  .founder .quote{color:#B7B1A8;font-size:clamp(17px,2.1vw,21px);line-height:1.8}
+  .founder .hl{color:#0092CC}
+  .founder .sig{margin-top:28px;color:#8A8378;font-size:14px}
+  .founder .foot{margin-top:36px;padding-top:24px;border-top:1px solid #EFEAE1;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#D81B60}
+
+  /* buttons */
+  .btn{border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.2em;padding:16px 28px;border:1px solid #16130F;gap:9px}
+  .btn-primary{background:#16130F;color:#FCFBF8;box-shadow:none}
+  .btn-primary:after{display:none}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(22,19,15,.2)}
+  .btn-magic{background:#fff;color:#16130F;border:1px solid #DED8CD}
+  .btn-magic:hover{border-color:#16130F;color:#16130F;box-shadow:0 12px 26px rgba(22,19,15,.1)}
+
+  /* sections */
+  .ticker{background:#F3EFE7;border-top:1px solid #EAE5DC;border-bottom:1px solid #EAE5DC}
+  .ticker-track{color:#6E6862;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em}
+  .ticker-track span{color:#D81B60}
+  .pad{padding:98px 0}
+  .head h2{color:#16130F}
+  .head p{color:#6E6862}
+  .head .eyebrow{color:#8A8378}
+  .sec-banner{border:1px solid #E7E2D9;box-shadow:0 24px 60px rgba(22,19,15,.1)}
+  .sec-banner:after{background:linear-gradient(180deg,rgba(252,251,248,.05),rgba(22,19,15,.6))}
+  .sec-banner .lbl .eyebrow{color:#F3EFE7}
+  .world{background:#fff;border:1px solid #E7E2D9;box-shadow:0 1px 0 rgba(22,19,15,.02)}
+  .world:hover{transform:translateY(-4px);border-color:#16130F;box-shadow:0 24px 50px rgba(22,19,15,.1)}
+  .world:after{opacity:.22;background:radial-gradient(circle,rgba(0,169,224,.4),transparent 68%)}
+  .world h3{color:#16130F}.world p{color:#6E6862}
+  .badge{font-family:"JetBrains Mono",monospace;letter-spacing:.16em;font-size:9.5px}
+  .badge.free{background:rgba(14,159,110,.09);color:#0B7D57;border:1px solid rgba(14,159,110,.3)}
+  .badge.hot{background:rgba(216,27,96,.07);color:#B0154F;border:1px solid rgba(216,27,96,.28)}
+  .badge.new{background:rgba(0,146,204,.08);color:#00719F;border:1px solid rgba(0,146,204,.28)}
+  .tier{background:#fff;border:1px solid #E7E2D9;box-shadow:0 1px 0 rgba(22,19,15,.02)}
+  .tier:hover{box-shadow:0 26px 60px rgba(22,19,15,.1)}
+  .tier.vip{border-color:#16130F;background:#FFFDF8}
+  .tier .tag{background:#16130F;color:#fff;font-family:"JetBrains Mono",monospace}
+  .tier .price{color:#16130F;font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.03em}
+  .tier .price s{color:#9A938A}
+  .tier ul li{color:#5C5750}
+  .tier li:before{color:#0092CC}
+  .band{background:#F3EFE7;border-top:1px solid #EAE5DC;border-bottom:1px solid #EAE5DC}
+  .band img.bg{opacity:.16}
+  .band:after{background:linear-gradient(100deg,rgba(252,251,248,.95),rgba(252,251,248,.78) 46%,rgba(252,251,248,.42))}
+  .band h3{color:#16130F}
+  .step .num{background:#16130F;color:#FCFBF8;box-shadow:none;font-family:"JetBrains Mono",monospace}
+  .step p{color:#5C5750}
+  .step b{color:#16130F}
+  .card-glow{background:#fff;border:1px solid #E7E2D9;box-shadow:0 24px 60px rgba(22,19,15,.08)}
+  .card-glow h3{color:#16130F}
+  .card-glow input,.card-glow textarea,.card-glow select{background:#FCFBF8;border:1px solid #DED8CD;color:#16130F}
+  .card-glow input::placeholder,.card-glow textarea::placeholder{color:#A29B91}
+  .card-glow input:focus,.card-glow textarea:focus,.card-glow select:focus{border-color:#0092CC;box-shadow:0 0 0 3px rgba(0,146,204,.12)}
+  .card-glow small{color:#8A8378}
+  .perks li{color:#5C5750}
+  .perks .ic{background:#F3EFE7;border:1px solid #E7E2D9;color:#0092CC}
+  .form-msg{color:#8A8378}
+  .form-msg.ok{color:#0B7D57}
+  .form-msg.err{color:#B0154F}
+  .lead-form small{color:#8A8378}
+  .portrait-card{border:1px solid #E7E2D9;box-shadow:0 24px 60px rgba(22,19,15,.1)}
+  .med-strip:after{background:radial-gradient(62% 72% at 50% 50%,rgba(252,251,248,.2),rgba(252,251,248,.8))}
+  .med-strip h2{color:#16130F}
+  .med-strip p{color:#4A453F}
+  .med-strip .eyebrow{color:#8A8378}
+  .give:after{background:radial-gradient(60% 60% at 50% 46%,rgba(22,19,15,.42),rgba(22,19,15,.78))}
+  footer{border-top:1px solid #EAE5DC;color:#6E6862}
+  .foot h5{color:#16130F;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.24em}
+  .foot a:hover{color:#0092CC}
+  .divider{background:linear-gradient(90deg,transparent,#E2DCD1,transparent)}
+  .payline{margin-top:44px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A8378}
+
+  /* ===== ART EVERYWHERE (old layout, cosmic artwork page-wide) ===== */
+  body{background:#0B0518 url("images/cosmos-islands.jpg") center center/cover no-repeat fixed}
+  .stars{display:block;opacity:.5}
+  .hero{background:linear-gradient(180deg,rgba(252,251,248,.40) 0%,rgba(249,246,240,.28) 55%,rgba(247,245,239,.55) 100%)}
+  .hero .g-left{width:min(34vw,470px);opacity:.98;left:-6%;top:40%}
+  .hero .g-right{width:min(29vw,400px);opacity:.95;right:-4%;top:4%}
+  .hero h1{text-shadow:0 2px 28px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.6)}
+  .hero .quote,.hero .pill,.hero .micro{background:rgba(255,255,255,.52);backdrop-filter:blur(10px);border-radius:14px}
+  .hero .pill{padding:9px 20px}
+  .hero .quote{padding:16px 22px;border:1px solid rgba(234,229,220,.9)}
+  .hero .micro{padding:8px 14px;display:inline-block}
+  .founder{background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(252,251,248,.36));border-color:rgba(234,229,220,.7);backdrop-filter:blur(4px)}
+  .founder .inner{background:rgba(255,255,255,.5);backdrop-filter:blur(12px);border:1px solid rgba(234,229,220,.9);border-radius:26px;padding:44px 34px;box-shadow:0 30px 80px rgba(22,19,15,.1)}
+  .ticker{background:rgba(243,239,231,.62);backdrop-filter:blur(6px);border-color:rgba(234,229,220,.85)}
+  .pad{position:relative;background:linear-gradient(180deg,rgba(252,251,248,.62),rgba(249,246,240,.54))}
+  .world,.tier,.card-glow{background:rgba(255,255,255,.74);backdrop-filter:blur(8px)}
+  .band{background:rgba(243,239,231,.6)}
+  .band img.bg{opacity:.34}
+  .band:after{background:linear-gradient(100deg,rgba(252,251,248,.86),rgba(252,251,248,.6) 46%,rgba(252,251,248,.24))}
+  .give:after{background:radial-gradient(62% 62% at 50% 46%,rgba(11,5,24,.34),rgba(11,5,24,.86) 78%)}
+  .give h2,.give p,.give .eyebrow{color:#F6F1EA}
+  .med-strip:after{background:radial-gradient(64% 74% at 50% 50%,rgba(11,5,24,.12),rgba(11,5,24,.68))}
+  @media(max-width:900px){
+    body{background-attachment:scroll;background-position:center top}
+    .hero .quote{padding:12px 16px}
+    .founder .inner{padding:32px 22px;border-radius:20px}
+  }
+  /* ===== OLD LAYOUT · SPACE THEME (appended override) ===== */
+  :root{--void:#05020F;--deep:#0C0620;--card:#140A30;--star:#F3EEFF;--muted:#A99FCE;
+        --gold:#FFCB6B;--gold2:#FF9E3D;--violet:#8B5CFF;--magenta:#FF4FD8;--cyan:#6FE9FF;--emerald:#3BF0B0}
+  body{background:radial-gradient(120% 80% at 50% -10%,#1A0F3C 0%,#0A0420 45%,#05020F 100%) fixed;color:var(--star)}
+  .stars{display:block;opacity:.85}
+  h1,h2,h3,.serif{font-family:Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .eyebrow{color:#9C93C4;font-family:"JetBrains Mono",ui-monospace,monospace;letter-spacing:.26em;font-size:10.5px}
+  .glow-text{background:none;color:var(--cyan);-webkit-text-fill-color:var(--cyan)}
+  header{background:rgba(5,2,15,.55);border-bottom:1px solid rgba(139,92,255,.22);backdrop-filter:blur(16px)}
+  .brand{color:var(--star)}
+  .nav nav{color:#A99FCE;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em}
+  .nav nav a:hover{color:var(--cyan)}
+  .crisisbar{background:rgba(18,10,46,.55);border-top:1px solid rgba(255,79,216,.2);border-bottom:1px solid rgba(255,79,216,.24);color:#B7AFD6}
+  .crisisbar a{color:var(--cyan)}
+
+  /* a few small planets from our own artwork */
+  .planets{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .planets i{position:absolute;display:block;border-radius:50%;background-size:cover;background-position:center;
+    box-shadow:0 0 0 1px rgba(139,92,255,.3),0 0 50px rgba(139,92,255,.28),inset 0 0 34px rgba(5,2,15,.45);
+    animation:drift 22s ease-in-out infinite alternate}
+  .pl1{width:106px;height:106px;left:4%;top:26%;background-image:url("images/cosmos-spiral.jpg");opacity:.9}
+  .pl2{width:66px;height:66px;right:7%;top:60%;background-image:url("images/cosmos-ringed.jpg");opacity:.85;animation-delay:-6s}
+  .pl3{width:164px;height:164px;right:9%;top:9%;background-image:url("images/cosmos-islands.jpg");opacity:.42;animation-delay:-12s}
+  .pl4{width:50px;height:50px;left:13%;bottom:14%;background-image:url("images/cosmos-enlightened.jpg");opacity:.7;animation-delay:-3s}
+  .pl5{width:84px;height:84px;left:47%;top:6%;background-image:url("images/cosmos-hands.jpg");opacity:.3;animation-delay:-9s}
+  @keyframes drift{from{transform:translate3d(0,-14px,0)}to{transform:translate3d(0,16px,0)}}
+  @media(max-width:900px){.pl3{width:92px;height:92px;opacity:.3}.pl1{width:68px;height:68px;opacity:.55}.pl2,.pl4{opacity:.4}.pl5{display:none}}
+
+  /* HERO (old layout, on space) */
+  .hero{min-height:0;display:block;text-align:center;padding:158px 0 104px;background:none;overflow:hidden}
+  .hero:before,.hero:after{display:none}
+  .hero-bg{display:none}
+  .hero .wrap{padding-top:0;position:relative;z-index:2}
+  .hero-copy{max-width:880px;margin:0 auto;padding:0;background:none;border:0;box-shadow:none;backdrop-filter:none}
+  .hero .pill{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#D9D0F2;border:1px solid rgba(139,92,255,.45);border-radius:999px;padding:9px 20px;background:rgba(20,10,48,.6)}
+  .hero h1{font-size:clamp(42px,8.2vw,104px);line-height:.96;letter-spacing:-.04em;margin:26px 0 24px;color:#FBF8FF;text-shadow:0 6px 46px rgba(139,92,255,.55),0 2px 6px rgba(0,0,0,.5)}
+  .hero .quote{max-width:660px;margin:0 auto 36px;font-size:clamp(16px,2vw,19.5px);line-height:1.72;color:#C9C0E8}
+  .hero .hl{color:var(--cyan)}
+  .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero .micro{margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#9C93C4}
+  .hero .micro b{display:none}
+  .hero .g{position:absolute;z-index:1;border-radius:50%;overflow:hidden;pointer-events:none;box-shadow:0 0 0 1px rgba(139,92,255,.35),0 40px 100px rgba(0,0,0,.55)}
+  .hero .g img{width:100%;height:100%;object-fit:cover;display:block}
+  .g-left{width:min(28vw,360px);aspect-ratio:1;left:-6%;top:44%;opacity:.92}
+  .g-right{width:min(23vw,300px);aspect-ratio:1;right:-4%;top:8%;opacity:.88}
+  @media(max-width:980px){.hero .g{display:none}.hero{padding:140px 0 84px}}
+
+  /* FOUNDER NOTE (old page 2) */
+  .founder{background:rgba(10,4,26,.45);border-top:1px solid rgba(139,92,255,.22);border-bottom:1px solid rgba(139,92,255,.22);padding:92px 0 96px;text-align:center}
+  .founder .inner{max-width:680px;margin:0 auto;padding:0 28px}
+  .founder .globe{font-size:30px;line-height:1;margin-bottom:30px}
+  .founder .quote{color:#C9C0E8;font-size:clamp(17px,2.1vw,21px);line-height:1.8}
+  .founder .hl{color:var(--cyan)}
+  .founder .sig{margin-top:28px;color:#9C93C4;font-size:14px}
+  .founder .foot{margin-top:36px;padding-top:24px;border-top:1px solid rgba(139,92,255,.22);font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--magenta)}
+
+  /* buttons */
+  .btn{border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.2em;padding:16px 28px;gap:9px}
+  .btn-primary{background:linear-gradient(100deg,#FFE7B0,#FFCB6B 55%,#FF9E3D);color:#241400;border:1px solid rgba(255,203,107,.7);box-shadow:0 0 46px rgba(255,158,61,.28)}
+  .btn-primary:after{display:none}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(255,158,61,.34)}
+  .btn-magic{background:rgba(139,92,255,.14);color:#EDE6FF;border:1px solid rgba(139,92,255,.55)}
+  .btn-magic:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 34px rgba(111,233,255,.28)}
+
+  /* sections */
+  .ticker{background:rgba(18,10,46,.5);border-top:1px solid rgba(139,92,255,.22);border-bottom:1px solid rgba(139,92,255,.22)}
+  .ticker-track{color:#B7AFD6;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em}
+  .ticker-track span{color:var(--magenta)}
+  .pad{padding:98px 0;background:none}
+  .head h2{color:#FBF8FF}
+  .head p{color:#B7AFD6}
+  .head .eyebrow{color:#9C93C4}
+  .sec-banner{border:1px solid rgba(139,92,255,.3);box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .sec-banner:after{background:linear-gradient(180deg,rgba(5,2,15,.35),rgba(5,2,15,.72))}
+  .sec-banner .lbl .eyebrow{color:#EFE9FF}
+  .world{background:rgba(18,10,46,.72);border:1px solid rgba(139,92,255,.32);backdrop-filter:blur(6px)}
+  .world:hover{transform:translateY(-4px);border-color:rgba(111,233,255,.55);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+  .world:after{opacity:.35;background:radial-gradient(circle,rgba(139,92,255,.5),transparent 68%)}
+  .world h3{color:#FBF8FF}.world p{color:#B7AFD6}
+  .badge{font-family:"JetBrains Mono",monospace;letter-spacing:.16em;font-size:9.5px}
+  .badge.free{background:rgba(59,240,176,.12);color:#7CFFCB;border:1px solid rgba(59,240,176,.4)}
+  .badge.hot{background:rgba(255,79,216,.12);color:#FF9BEA;border:1px solid rgba(255,79,216,.42)}
+  .badge.new{background:rgba(111,233,255,.12);color:#A4F3FF;border:1px solid rgba(111,233,255,.42)}
+  .tier{background:rgba(18,10,46,.78);border:1px solid rgba(139,92,255,.34);backdrop-filter:blur(6px)}
+  .tier:hover{box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .tier.vip{border-color:rgba(255,203,107,.6);background:linear-gradient(170deg,rgba(58,30,10,.5),rgba(14,7,34,.94))}
+  .tier .tag{background:linear-gradient(100deg,var(--gold),var(--gold2));color:#241400;font-family:"JetBrains Mono",monospace}
+  .tier .price{color:#FBF8FF;font-family:Inter,sans-serif;font-weight:700;letter-spacing:-.03em}
+  .tier .price s{color:#8E86AE}
+  .tier ul li{color:#B7AFD6}
+  .tier li:before{color:var(--cyan)}
+  .band{background:rgba(18,10,46,.55);border-top:1px solid rgba(139,92,255,.24);border-bottom:1px solid rgba(139,92,255,.24)}
+  .band img.bg{opacity:.55}
+  .band:after{background:linear-gradient(100deg,rgba(5,2,15,.9),rgba(5,2,15,.72) 46%,rgba(5,2,15,.4))}
+  .band h3{color:#FBF8FF}
+  .step .num{background:linear-gradient(140deg,var(--gold),var(--gold2));color:#241400;box-shadow:0 0 26px rgba(255,158,61,.4);font-family:"JetBrains Mono",monospace}
+  .step p{color:#B7AFD6}
+  .step b{color:#FBF8FF}
+  .card-glow{background:rgba(18,10,46,.8);border:1px solid rgba(255,203,107,.35);box-shadow:0 26px 70px rgba(0,0,0,.5);backdrop-filter:blur(8px)}
+  .card-glow h3{color:#FBF8FF}
+  .card-glow input,.card-glow textarea,.card-glow select{background:rgba(5,2,15,.7);border:1px solid rgba(139,92,255,.4);color:var(--star)}
+  .card-glow input::placeholder,.card-glow textarea::placeholder{color:#8E86AE}
+  .card-glow input:focus,.card-glow textarea:focus,.card-glow select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(111,233,255,.14)}
+  .card-glow small{color:#9C93C4}
+  .perks li{color:#B7AFD6}
+  .perks .ic{background:rgba(139,92,255,.16);border:1px solid rgba(139,92,255,.4);color:var(--cyan)}
+  .form-msg{color:#9C93C4}
+  .form-msg.ok{color:#7CFFCB}
+  .form-msg.err{color:#FF8FB4}
+  .lead-form small{color:#9C93C4}
+  .portrait-card{border:1px solid rgba(139,92,255,.32);box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .med-strip:after{background:linear-gradient(180deg,rgba(5,2,15,.5),rgba(5,2,15,.8))}
+  .med-strip h2{color:#FBF8FF}
+  .med-strip p{color:#B7AFD6}
+  .med-strip .eyebrow{color:#9C93C4}
+  .give:after{background:radial-gradient(62% 62% at 50% 46%,rgba(5,2,15,.42),rgba(5,2,15,.86) 80%)}
+  footer{border-top:1px solid rgba(139,92,255,.24);color:#9C93C4}
+  .foot h5{color:#FBF8FF;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.24em}
+  .foot a:hover{color:var(--cyan)}
+  .divider{background:linear-gradient(90deg,transparent,rgba(139,92,255,.45),transparent)}
+  .payline{margin-top:44px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#9C93C4}
+
+  /* ===== PLANET CAROUSEL (worlds) ===== */
+  .worlds.orbit{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding:6px 2px 18px;margin:0 -2px;scrollbar-width:none}
+  .worlds.orbit::-webkit-scrollbar{display:none}
+  .worlds.orbit .world{flex:0 0 clamp(260px,31%,340px);scroll-snap-align:center;min-height:250px;padding:26px 24px 24px;position:relative}
+  .worlds.orbit .world.planet:before{content:"";width:92px;height:92px;border-radius:50%;margin-bottom:16px;display:block;
+    background:var(--planet) center/cover no-repeat;
+    box-shadow:0 0 0 1px rgba(139,92,255,.4),0 0 34px rgba(139,92,255,.45),inset 0 0 26px rgba(5,2,15,.5);
+    animation:spin 40s linear infinite}
+  .worlds.orbit .world.planet:nth-child(2n):before{animation-duration:52s}
+  .worlds.orbit .world.planet:nth-child(3n):before{animation-duration:64s}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .worlds.orbit .world:hover:before{box-shadow:0 0 0 1px rgba(111,233,255,.6),0 0 46px rgba(111,233,255,.45),inset 0 0 26px rgba(5,2,15,.5)}
+  .orbit-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:6px}
+  .orbit-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,92,255,.45);background:rgba(18,10,46,.8);
+    color:#EDE6FF;font-size:15px;cursor:pointer;transition:.25s}
+  .orbit-btn:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 26px rgba(111,233,255,.3)}
+  .orbit-spin{width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,92,255,.3);
+    background:radial-gradient(circle at 34% 30%,rgba(139,92,255,.6),rgba(18,10,46,.9));animation:spin 18s linear infinite}
+  .orbit-dots{display:flex;gap:7px}
+  .orbit-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(139,92,255,.45);transition:.25s}
+  .orbit-dot.on{background:var(--cyan);box-shadow:0 0 12px rgba(111,233,255,.8);width:22px;border-radius:999px}
+  @media(max-width:760px){.worlds.orbit .world{flex:0 0 82%}.worlds.orbit .world.planet:before{width:78px;height:78px}}
+
+  /* ===== LIVING COSMOS: meteors, reveals, cursor light, tilt ===== */
+  #sky{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .cursor-glow{position:fixed;top:0;left:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;
+    pointer-events:none;z-index:1;opacity:0;transition:opacity .4s;
+    background:radial-gradient(circle,rgba(139,92,255,.16),rgba(111,233,255,.07) 42%,transparent 68%)}
+  body.cursor-on .cursor-glow{opacity:1}
+  .spark{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:2;
+    background:radial-gradient(circle,#fff,rgba(111,233,255,.7) 55%,transparent 72%);animation:sparkOut .85s ease-out forwards}
+  @keyframes sparkOut{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
+  .reveal{opacity:0;transform:translate3d(0,26px,0);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .world,.tier,.card-glow{will-change:transform}
+  .world.tilting,.tier.tilting{transition:transform .18s ease-out,box-shadow .3s,border-color .3s}
+  .hero h1{animation:heroIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes heroIn{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+  .hero .pill,.hero .quote,.hero .actions,.hero .micro{animation:heroIn 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .pill{animation-delay:.05s}.hero .quote{animation-delay:.16s}.hero .actions{animation-delay:.28s}.hero .micro{animation-delay:.4s}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none}
+    #sky,.cursor-glow,.spark{display:none}
+    .planets i{animation:none}
+    .hero h1,.hero .pill,.hero .quote,.hero .actions,.hero .micro{animation:none}
+  }
+
+  /* ===== V2: LEGIBILITY PASS ===== */
+  .hero .quote{background:rgba(8,3,22,.42);border:1px solid rgba(139,92,255,.22);border-radius:18px;padding:22px 26px;backdrop-filter:blur(6px)}
+  .hero .quote strong,.hero .quote b{color:#fff}
+  .head p{color:#D8CFF0}
+  .head h2{text-shadow:0 2px 24px rgba(5,2,15,.85)}
+  .founder .quote{color:#F0EAFF}
+  .founder .inner{background:rgba(8,3,22,.55);border:1px solid rgba(139,92,255,.22);border-radius:20px;padding:34px 30px;backdrop-filter:blur(6px)}
+  .world p{color:#D3C9EE}
+  .tier ul li{color:#D3C9EE}
+  .tier .price small{color:#B7AED6}
+  .step p{color:#D3C9EE}
+  .band h3{text-shadow:0 2px 26px rgba(5,2,15,.9),0 1px 3px rgba(0,0,0,.8)}
+  .band p{color:#E6DDF8;text-shadow:0 1px 14px rgba(5,2,15,.9)}
+  .band:after{background:linear-gradient(100deg,rgba(5,2,15,.95),rgba(5,2,15,.82) 46%,rgba(5,2,15,.55))}
+  .sec-banner .lbl{background:linear-gradient(180deg,rgba(5,2,15,.15),rgba(5,2,15,.82))}
+  .sec-banner .lbl .eyebrow{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.9)}
+  .med-strip h2{text-shadow:0 2px 24px rgba(5,2,15,.9)}
+  .med-strip p{color:#D8CFF0;text-shadow:0 1px 16px rgba(5,2,15,.8)}
+  .give p,.give h2{text-shadow:0 1px 18px rgba(5,2,15,.85)}
+  .ticker-track{color:#D3C9EE}
+  .crisisbar{color:#CFC5EA}
+  .foot a,.foot li{color:#B7AED6}
+  .card-glow small,.lead-form small{color:#B7AED6}
+  .perks li{color:#D3C9EE}
+  .pl5{left:6%;top:78%;opacity:.22}
+  .planets i{filter:saturate(1.05) blur(.2px)}
+
+  /* breathing light: an 8s inhale/exhale under the fold */
+  .breath{position:fixed;left:50%;top:52%;width:min(1100px,120vw);aspect-ratio:1;transform:translate(-50%,-50%);
+    pointer-events:none;z-index:0;border-radius:50%;
+    background:radial-gradient(circle,rgba(139,92,255,.16),rgba(111,233,255,.06) 42%,transparent 70%);
+    animation:breathe 11s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(.94)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.05)}}
+
+  /* scroll orbit indicator */
+  .orbit-progress{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;z-index:5;
+    background:conic-gradient(var(--cyan) calc(var(--p,0)*1%),rgba(255,255,255,.1) 0);
+    display:grid;place-items:center;box-shadow:0 0 26px rgba(111,233,255,.22);pointer-events:none;transition:opacity .3s}
+  .orbit-progress:before{content:"";width:40px;height:40px;border-radius:50%;background:rgba(6,3,18,.92);border:1px solid rgba(139,92,255,.3)}
+  .orbit-progress:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 14px rgba(111,233,255,.9);top:3px;left:50%;margin-left:-3.5px}
+  @media(max-width:700px){.orbit-progress{width:42px;height:42px;right:14px;bottom:14px}.orbit-progress:before{width:32px;height:32px}}
+
+  /* click burst + constellation canvas */
+  #constel{position:fixed;inset:0;z-index:1;pointer-events:none}
+  .burst{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:6;
+    background:radial-gradient(circle,#fff,rgba(139,92,255,.75) 55%,transparent 72%)}
+  @media(prefers-reduced-motion:reduce){.breath{animation:none}.orbit-progress{display:none}}
+
+  /* ===== FINAL CONTRAST GUARANTEE (dark theme wins, always readable) ===== */
+  .band{background:rgba(11,5,28,.9)!important;backdrop-filter:blur(6px)}
+  .band h3,.band h2,.band h3.serif{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .band p{color:#EAE2FA!important;-webkit-text-fill-color:#EAE2FA!important}
+  .band .btn-primary{color:#241400!important;-webkit-text-fill-color:#241400!important}
+  .hero h1{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .hero .quote,.hero .quote strong{color:#EDE7FB!important;-webkit-text-fill-color:#EDE7FB!important}
+  .hero .hl{color:#6FE9FF!important;-webkit-text-fill-color:#6FE9FF!important}
+  .hero .micro{color:#CFC5EA!important;-webkit-text-fill-color:#CFC5EA!important}
+  .head h2,.head h2 .glow-text{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .head p{color:#DCD3F2!important;-webkit-text-fill-color:#DCD3F2!important}
+  .head .eyebrow{color:#C9BFE6!important;-webkit-text-fill-color:#C9BFE6!important}
+  .world h3{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .world p{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .tier h3,.tier .price{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .tier ul li{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .tier .eyebrow{color:#C9BFE6!important;-webkit-text-fill-color:#C9BFE6!important}
+  .founder .quote,.founder .quote strong{color:#F2ECFF!important;-webkit-text-fill-color:#F2ECFF!important}
+  .founder .sig{color:#C9BFE6!important;-webkit-text-fill-color:#C9BFE6!important}
+  .founder .foot{color:#FF8FD8!important;-webkit-text-fill-color:#FF8FD8!important}
+  .step p{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .step b{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .med-strip h2{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .med-strip p{color:#DCD3F2!important;-webkit-text-fill-color:#DCD3F2!important}
+  .give h2,.give p{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .card-glow h3{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .card-glow small,.lead-form small,.perks li{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .ticker-track{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .crisisbar,.crisisbar a{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .crisisbar a{color:#7AF6F6!important;-webkit-text-fill-color:#7AF6F6!important}
+  .sec-banner .lbl .eyebrow{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  footer,.foot li,.foot a{color:#C9BFE6!important;-webkit-text-fill-color:#C9BFE6!important}
+  .foot h5{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  .payline{color:#C9BFE6!important;-webkit-text-fill-color:#C9BFE6!important}
+  .badge.free{color:#8CFFD4!important;-webkit-text-fill-color:#8CFFD4!important}
+  .badge.hot{color:#FFAFEE!important;-webkit-text-fill-color:#FFAFEE!important}
+  .badge.new{color:#B4F6FF!important;-webkit-text-fill-color:#B4F6FF!important}
+  .nav nav a{color:#CFC5EA!important;-webkit-text-fill-color:#CFC5EA!important}
+  .nav nav a:hover{color:#6FE9FF!important;-webkit-text-fill-color:#6FE9FF!important}
+
+  /* ===== V3: orbit feel for both carousels ===== */
+  .worlds.orbit .world{transition:box-shadow .35s,border-color .35s,transform .3s}
+  .worlds.orbit .world.active{border-color:rgba(111,233,255,.55);
+    box-shadow:0 0 0 1px rgba(111,233,255,.25),0 24px 70px rgba(111,233,255,.16),0 10px 40px rgba(5,2,15,.6)}
+  .worlds.orbit .world.active .badge{box-shadow:0 0 22px rgba(111,233,255,.35)}
+  .tiers{position:relative;isolation:isolate}
+  .tiers:before{content:"";position:absolute;left:-8%;right:-8%;top:8%;bottom:-6%;border:1px dashed rgba(139,92,255,.22);
+    border-radius:50%/34%;z-index:-1;animation:orbitTilt 26s ease-in-out infinite alternate}
+  @keyframes orbitTilt{from{transform:rotate(-.6deg) scale(1)}to{transform:rotate(.6deg) scale(1.015)}}
+  .tier.planet:before{content:"";width:78px;height:78px;border-radius:50%;margin:0 0 16px;display:block;
+    background:var(--planet) center/cover no-repeat;
+    box-shadow:0 0 0 1px rgba(139,92,255,.45),0 0 34px rgba(139,92,255,.4),inset 0 0 24px rgba(5,2,15,.45);
+    animation:spin 46s linear infinite}
+  .tier.planet:nth-child(2):before{animation-duration:58s}
+  .tier p{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .worlds.orbit{cursor:grab}
+  .worlds.orbit.dragging{cursor:grabbing;scroll-snap-type:none}
+  .worlds.orbit.dragging .world{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="planets" aria-hidden="true"><i class="pl1"></i><i class="pl2"></i><i class="pl3"></i><i class="pl4"></i><i class="pl5"></i></div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top"><img src="images/icon.jpg" alt="">Raising Awareness Together</a>
+    <nav>
+      <a href="#worlds">Worlds</a>
+      <a href="#courses">Courses</a>
+      <a href="mission.html">Mission</a>
+      <a href="#why">Why</a>
+      <a href="mission.html">Mission</a> · <a href="creator-portal.html">Creator portal</a>
+      <a href="#welcome">Free guide</a>
+      <a href="#give">Give</a>
+    </nav>
+    <a class="btn btn-primary" href="#worlds" style="padding:12px 24px">Enter free</a>
+  </div>
+  <div class="crisisbar">In crisis right now? <a href="tel:988">Call or text 988</a> &nbsp;·&nbsp; free, confidential, 24/7 &nbsp;·&nbsp; <a href="https://findahelpline.com" target="_blank" rel="noopener">outside the US</a></div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="g g-left"><img src="images/cosmos-spiral.jpg" alt="A meditator above a spiral of cosmic light"></div>
+  <div class="g g-right"><img src="images/cosmos-ringed.jpg" alt="A meditator on a rock facing a ringed planet"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="pill">🪐 Founded from the heart · Built for humanity</p>
+      <h1>Raising Awareness Together</h1>
+      <p class="quote">I built this because <span class="hl">I believe knowledge is the most powerful force in the universe.</span> If we share what we know, we can heal this world — together.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#worlds">🚀 Explore courses</a>
+        <a class="btn btn-magic" href="#build">💡 Share your idea</a>
+      </div>
+      <p class="micro">Free to walk in · 7 worlds open tonight · healing is never sold here</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="inner">
+      <div class="globe">🌍</div>
+      <p class="quote">I'm not a corporation. I'm not a tech company. I'm just someone who woke up one day and said — <span class="hl">if I have something that can help somebody, why am I sitting on it?</span> This platform is my answer to that question. Every course here exists because someone, somewhere, needed to hear it.</p>
+      <p class="sig">The Founder, Raising Awareness Together</p>
+      <p class="foot">📍 Built with purpose · Powered by love</p>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span></div>
+    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span></div>
+  </div>
+</div>
+
+<!-- WORLDS -->
+<section class="pad" id="worlds">
+  <div class="wrap">
+    <div class="sec-banner">
+      <img src="images/cosmos-temple.jpg" alt="A glowing cosmic temple on floating islands">
+      <div class="lbl"><p class="eyebrow">Open all night</p></div>
+    </div>
+    <div class="head">
+      <p class="eyebrow">Free admission · always</p>
+      <h2>Pick the world that <span class="glow-text">calls you</span></h2>
+      <p>Pick the world that calls you. Each one is a short guided experience you can finish in a night. No charge, no membership card, nothing between you and the first step.</p>
+    </div>
+
+    <div class="worlds orbit" id="orbit">
+      <a style="--planet:url(images/cosmos-spiral.jpg)" class="world planet w6" href="#/world/nervous-system-reset">
+        <div><div class="badge hot">● Most entered</div><h3>3-Day Nervous System Reset</h3><p>Three nights, three short practices. For when your body refuses to settle.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-ringed.jpg)" class="world planet w6" href="#/world/crisis-and-suicide-prevention">
+        <div><div class="badge free">Free entry</div><h3>Crisis &amp; Suicide Prevention: You Matter</h3><p>What to say, what to do, and how to stay when someone is in the dark.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-enlightened.jpg)" class="world planet w4" href="#/world/through-the-dark">
+        <div><div class="badge free">Free entry</div><h3>Through the Dark</h3><p>Grief and loss, walked through instead of around.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-islands.jpg)" class="world planet w4" href="#/world/calm-in-the-storm">
+        <div><div class="badge free">Free entry</div><h3>Calm in the Storm</h3><p>Anger management that actually works. Heat without wreckage.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-hands.jpg)" class="world planet w4" href="#/world/protect-your-peace">
+        <div><div class="badge new">New path</div><h3>Protect Your Peace</h3><p>Narcissistic patterns, and how to detach without a war.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-temple.jpg)" class="world planet w4" href="#/world/safe-and-seen">
+        <div><div class="badge free">Free entry</div><h3>Safe and Seen</h3><p>Recognizing abuse, and finding your way out.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-portrait.jpg)" class="world planet w4" href="#/world/addiction-and-recovery">
+        <div><div class="badge free">Free entry</div><h3>Addiction &amp; Recovery</h3><p>Honest ground for the first real day.</p></div>
+      </a>
+      <a style="--planet:url(images/cosmos-gathering.jpg)" class="world planet w4" href="#/world/learning-how-to-build">
+        <div><div class="badge new">Start here</div><h3>Learning How To Build</h3><p>For the night you decide to build something of your own. The door to the full program list, not a course.</p></div>
+      </a>
+    </div>
+    <div class="orbit-nav">
+      <button class="orbit-btn" type="button" data-orbit="prev" aria-label="Previous worlds">&larr;</button>
+      <div class="orbit-dots" id="orbitDots"></div>
+      <button class="orbit-btn" type="button" data-orbit="next" aria-label="More worlds">&rarr;</button>
+    </div>
+  </div>
+</section>
+
+
+<div class="band">
+  <div class="wrap">
+    <div>
+      <h3>When you are steady, ready to build? Start with the AI course.</h3>
+      <p>Two courses. Everything in one lifetime access.</p>
+    </div>
+    <a class="btn btn-primary" href="#/course/ai-driven-business">Get the AI course · $97</a>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="pad" id="courses">
+  <div class="wrap">
+    <div class="sec-banner">
+      <img src="images/cosmos-enlightened.jpg" alt="Meditating figures with light erupting from their crowns">
+      <div class="lbl"><p class="eyebrow">The vault</p></div>
+    </div>
+    <div class="head">
+      <p class="eyebrow">The vault</p>
+      <h2>When you are ready for the <span class="glow-text">next level</span></h2>
+      <p>Two courses. Everything in one lifetime access. One payment, and a guarantee that means something.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="tier vip planet" style="--planet:url(images/cosmos-ringed.jpg)">
+        <div class="tag">Best value</div>
+        <p class="eyebrow" style="color:var(--cyan)">Build</p>
+        <h3>The AI-Driven Business: 2026 Automation Mastery</h3>
+        <p style="color:#5C5750;font-size:14.5px">An automated, AI-powered business using ChatGPT, Claude, Wix and Zapier. Three modules, video lessons, lifetime access.</p>
+        <div class="price">$97 <s>$497</s></div>
+        <ul>
+          <li>Lead capture and follow-up on autopilot</li>
+          <li>24/7 virtual support agents</li>
+          <li>Content and SEO running without you</li>
+          <li>30-day Results or It's Free guarantee</li>
+        </ul>
+        <a class="btn btn-primary" href="https://www.raisingawarenesstogether.com/_paylink/mv0f13Gzakpe">Claim the course</a>
+        <a class="cv-more" href="#/course/ai-driven-business">See what is inside &rarr;</a>
+      </div>
+
+      <div class="tier planet" style="--planet:url(images/cosmos-spiral.jpg)">
+        <p class="eyebrow">Foundation</p>
+        <h3>Money, Power &amp; Freedom</h3>
+        <p style="color:#5C5750;font-size:14.5px">Money has rules. Freedom is the reward for learning them. 14 modules built for people who were never taught this.</p>
+        <div class="price">$69 <s>$197</s></div>
+        <ul>
+          <li>Credit, debt, investing, real estate, taxes</li>
+          <li>Starting a business with little to nothing</li>
+          <li>From the mindset to the legacy</li>
+        </ul>
+        <a class="btn btn-magic" href="https://www.raisingawarenesstogether.com/product-page/money-power-freedom-financial-literacy-for-real-life">Open the vault</a>
+        <a class="cv-more" href="#/course/money-power-freedom">See what is inside &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="band">
+      <img class="bg" src="images/cosmos-islands.jpg" alt="Floating crystal islands above a glowing nebula">
+      <div class="inner">
+        <p class="eyebrow">Why this exists</p>
+        <h2>Some of us did not get a fair shot</h2>
+        <p style="color:#5C5750;font-size:15.5px">We figured things out alone, and now we are building something. No gatekeeping. The climb wasn't easy, and we won't pretend it was.</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><p><b>First, the body.</b> Nervous system, grief, anger, addiction. Nothing else works in survival mode.</p></div>
+          <div class="step"><div class="num">2</div><p><b>Then, the money.</b> Credit, debt, taxes, investing, the rules nobody teaches in school.</p></div>
+          <div class="step"><div class="num">3</div><p><b>Then, the leverage.</b> AI and automation, so the business runs when you stop.</p></div>
+          <div class="step"><div class="num">4</div><p><b>Always, the door open.</b> If money is the only reason you cannot start, say so.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME -->
+<section class="pad" id="welcome">
+  <div class="wrap welcome">
+    <div>
+      <p class="eyebrow">Your first key</p>
+      <h2 style="font-size:clamp(30px,4vw,48px);margin:16px 0 18px">5 AI tools for your <span class="glow-text">first week</span></h2>
+      <p style="color:var(--muted);margin-bottom:26px">You do not need to be a tech person. Pick one. Set it up this week. That is the whole plan.</p>
+      <ul class="perks">
+        <li><span class="ic">✦</span><div><b>ChatGPT</b> drafts your emails and posts in seconds</div></li>
+        <li><span class="ic">✦</span><div><b>Zapier</b> moves information between your apps without you</div></li>
+        <li><span class="ic">✦</span><div><b>Calendly</b> ends the back and forth of booking times</div></li>
+        <li><span class="ic">✦</span><div><b>Canva</b> makes professional graphics with no design skills</div></li>
+        <li><span class="ic">✦</span><div><b>ManyChat</b> answers messages and comments for you</div></li>
+      </ul>
+    </div>
+    <div>
+    <div class="card-glow">
+      <h3>Send me the free guide</h3>
+      <p style="color:var(--muted);font-size:13.5px;margin-bottom:22px">Straight to your inbox, plus a short welcome series with one small action at a time.</p>
+      <form class="lead-form" data-kind="guide" data-source="welcome-guide" data-done="You are in. The guide is on its way to your inbox." novalidate>
+        <input type="text" name="first_name" placeholder="First name" aria-label="First name" autocomplete="given-name">
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" type="submit">Send me the guide</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+        <small>Free. No spam. Unsubscribe any time.</small>
+      </form>
+    </div>
+    <div class="portrait-card"><img src="images/cosmos-portrait.jpg" alt="A person meditating with light rising from the crown of the head"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE BUILDER -->
+<section class="pad" id="build">
+  <div class="wrap">
+    <div class="build-grid">
+      <div>
+        <p class="eyebrow">Creator portal</p>
+        <h2 style="font-size:clamp(28px,4vw,48px);margin:14px 0 18px">You have a course in you. <span class="glow-text">Build it here.</span></h2>
+        <p style="color:var(--muted);font-size:16px">Bring the thing you lived through or the skill you earned the hard way. We turn it into a program people can actually finish: sections, steps, and a plan, built in the same place as the worlds above.</p>
+        <ul class="perks" style="margin-top:26px">
+          <li><span class="ic">✦</span><div><b>Bring the outline.</b> A rough idea is enough to start. If you have a PDF, a doc, or a voice note, send the link.</div></li>
+          <li><span class="ic">✦</span><div><b>We shape it.</b> Your material becomes sections and steps, in plain language, in the order that helps someone most.</div></li>
+          <li><span class="ic">✦</span><div><b>It goes live with the rest.</b> Free worlds stay free. Skill courses are paid, and you keep 70% of what yours sells.</div></li>
+        </ul>
+      </div>
+      <div class="card-glow">
+        <h3>Submit your course</h3>
+        <p style="color:var(--muted);font-size:13.5px;margin-bottom:22px">Every submission lands in the same inbox as our other forms. We read all of them.</p>
+        <p style="font-size:12.5px;color:var(--muted);margin:-6px 0 18px">Want the full terms first? <a href="creator-portal.html" style="color:var(--cyan);text-decoration:underline;text-underline-offset:3px">See how the 70% split works</a>.</p>
+        <form class="lead-form" data-kind="course_submission" data-source="course-builder" data-done="Got it. Your course idea is in. We will reply to the email you gave us." novalidate>
+          <input type="text" name="first_name" placeholder="Full name" aria-label="Full name" autocomplete="name">
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+          <input type="email" name="paypal_email" placeholder="PayPal email (for payouts)" aria-label="PayPal email">
+          <input type="text" name="course_title" placeholder="Working title" aria-label="Working title">
+          <select name="course_category" aria-label="Category">
+            <option value="">Course category</option>
+            <option>Trauma and grief</option>
+            <option>Addiction and recovery</option>
+            <option>Anxiety, anger and calm</option>
+            <option>Money and credit</option>
+            <option>Business and AI</option>
+            <option>Something else</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your idea, and who it is for" aria-label="Tell us about your idea"></textarea>
+          <input type="text" name="outline_url" placeholder="Link to your outline (optional)" aria-label="Link to your outline">
+          <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary" type="submit">Send my course idea</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+          <small>Free to submit. You keep the rights to your material.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="med-strip">
+  <img src="images/cosmos-gathering.jpg" alt="">
+  <div class="inner">
+    <p class="eyebrow">The cosmos is doing something</p>
+    <h2>Every world here starts with one quiet decision</h2>
+    <p>You do not need faith, money, or a following. You need one night where you decide the old way is done.</p>
+  </div>
+</section>
+
+<!-- GIVE -->
+<section class="give" id="give">
+  <img src="images/cosmos-hands.jpg" alt="Hands holding a glowing galaxy">
+  <div class="wrap">
+    <p class="eyebrow">Pass it forward</p>
+    <h2 style="margin-top:16px">If this helped, pay it forward</h2>
+    <p>If you like what we are doing, and something on this site helped you, pay it forward. That is what keeps the free courses open for the people who cannot afford them.</p>
+    <a class="btn btn-primary" href="https://www.raisingawarenesstogether.com/product-page/donation-support-raising-awareness-together">Pay it forward</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="max-width:320px">
+        <a class="brand" href="#top" style="margin-bottom:14px"><img src="images/icon.jpg" alt="">Raising Awareness Together</a>
+        <p>Helping people who struggle, through lived experience, plain facts, and access that does not ask for money first.</p>
+      </div>
+      <div class="cols">
+        <div><h5>Explore</h5><ul><li><a href="#worlds">Free worlds</a></li><li><a href="#courses">Courses</a></li><li><a href="creator-portal.html">Creator portal</a></li><li><a href="#welcome">Free guide</a></li></ul></div>
+        <div><h5>Legal</h5><ul><li><a href="https://www.raisingawarenesstogether.com/blank-2">Terms of Service</a></li><li><a href="https://www.raisingawarenesstogether.com/blank">Privacy Policy</a></li><li><a href="https://www.raisingawarenesstogether.com/blank-3">Refund Policy</a></li><li><a href="creator-portal.html">Creator Agreement</a></li></ul></div>
+        <div><h5>Support</h5><ul><li><a href="#give">Donate</a></li><li><a href="https://www.raisingawarenesstogether.com/inquiry-services-page">Contact</a></li><li><a href="https://www.raisingawarenesstogether.com/blog">Blog</a></li></ul></div>
+      </div>
+    </div>
+    <p class="payline">Secure payments via PayPal · 30-day money-back guarantee · No hidden fees · Cancel anytime</p>
+    <div class="divider"></div>
+    <p style="font-size:12px">© 2026 Raising Awareness Together. If you are in crisis, call or text 988.</p>
+  </div>
+</footer>
+
+<!-- COURSE VIEW -->
+<div class="cv" id="cv" aria-hidden="true">
+  <div class="cv-top">
+    <a class="cv-back" href="#worlds" id="cvBack">&larr; All worlds</a>
+    <a class="cv-brand" href="#top" id="cvBrand"><img src="images/icon.jpg" alt="">Raising Awareness Together</a>
+    <a class="cv-crisis" href="tel:988">In crisis? 988</a>
+  </div>
+  <div class="cv-hero"><img id="cvArt" src="images/cosmos-temple.jpg" alt=""><div class="inner">
+    <div class="cv-chips" id="cvChips"></div>
+    <h1 id="cvTitle">Course</h1>
+  </div></div>
+  <div class="cv-body" id="cvBody"></div>
+</div>
+
+<script>
+var BASE = "https://www.raisingawarenesstogether.com";
+var COURSES = {
+  "nervous-system-reset": {
+    free: true,
+    title: "3-Day Nervous System Reset", tagline: "Three nights, three short practices. For when your body refuses to settle.",
+    art: "images/cosmos-hands.jpg", chip: "Free entry", alt: "3 steps · self-paced", chip2: "Most entered",
+    about: "Feel calmer in five minutes a day. A free three-day mini-course teaching three science-backed ways to steer your own stress response: interrupt a stress spike fast, release held tension from the body, and downshift into deep rest at bedtime. Each day is one short practice you can feel working. No hype, no miracle claims, just well-researched tools from respiratory physiology and somatic practice, explained plainly.",
+    bullets: ["Day 1: interrupt a stress spike in about five minutes","Day 2: release tension the body has been holding","Day 3: downshift into deep rest at bedtime","Built on respiratory physiology and somatic practice, no hype"],
+    cta: "Enter this world", url: BASE + "/challenge-page/3-day-nervous-system-reset?programId=012b4bd5-1a39-4538-add4-e1ad53256161"
+  },
+  "crisis-and-suicide-prevention": {
+    free: true,
+    title: "Crisis & Suicide Prevention: You Matter", tagline: "What to say, what to do, and how to stay when someone is in the dark.",
+    art: "images/cosmos-enlightened.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone who wants to understand mental health crisis, recognize the warning signs, and know what to do, for themselves or for someone they care about. Written with honesty and care.",
+    bullets: ["What a mental health crisis actually is","The warning signs, and how to catch them early","What to say, and what never to say","How to stay with someone in the dark","Where to bring in professional help"],
+    help: "If you are in crisis right now: call or text 988. Free, confidential, 24/7.",
+    cta: "Enter this world", url: BASE + "/challenge-page/crisis-and-suicide-prevention-you-matter?programId=0f12f094-7dd2-4aa0-b317-e64b2f81d539"
+  },
+  "through-the-dark": {
+    free: true,
+    title: "Through the Dark: Grief and Loss", tagline: "Grief and loss, walked through instead of around.",
+    art: "images/cosmos-gathering.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone carrying grief: after death, relationship loss, identity loss, or the many other forms loss takes.",
+    bullets: ["What grief really is, and is not","How to stay present with pain instead of routing around it","Finding meaning when the old meaning is gone","Rebuilding connection","Moving forward without forgetting"],
+    cta: "Enter this world", url: BASE + "/challenge-page/through-the-dark-grief-and-loss?programId=e7b5ac6c-3332-4dc0-aee8-e56a9f52a09e"
+  },
+  "calm-in-the-storm": {
+    free: true,
+    title: "Calm in the Storm", tagline: "Anger management that actually works. Heat without wreckage.",
+    art: "images/cosmos-islands.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone who wants to understand and manage their anger. Not suppress it, work with it. Plain language. Real tools. No judgment.",
+    bullets: ["The biology of anger, and why it hijacks you","Your own personal anger cycle","In-the-moment techniques that hold up under pressure","Communication skills that do not escalate","Root causes and long-term change"],
+    cta: "Enter this world", url: BASE + "/challenge-page/calm-in-the-storm-anger-management?programId=1075739c-93e7-4493-8693-5a914f5e91aa"
+  },
+  "protect-your-peace": {
+    free: true,
+    title: "Protect Your Peace", tagline: "Narcissistic patterns, and how to detach without a war.",
+    art: "images/cosmos-portrait.jpg", chip: "Free entry", alt: "27 steps · self-paced", chip2: "New path",
+    about: "Learn to spot common narcissistic and manipulative patterns, understand different behavior profiles, and take practical steps to set boundaries, reduce contact, and safely detach.",
+    bullets: ["Spot the common narcissistic and manipulative patterns","Understand the different behavior profiles","Set boundaries and reduce contact safely","De-escalation and documentation tactics","Build a personal protection plan","A starting self-check quiz for red flags and risk level"],
+    cta: "Enter this world", url: BASE + "/challenge-page/protect-your-peace?programId=e5779087-cc60-455e-ac68-4c12d0097839"
+  },
+  "safe-and-seen": {
+    free: true,
+    title: "Safe and Seen", tagline: "Recognizing abuse, and finding your way out.",
+    art: "images/cosmos-temple.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course covering what domestic violence is in all its forms, how to recognize the signs, why leaving is so complicated, how to safety plan, where to find help, and what healing looks like. Written with care for people in real danger, and for those who want to help someone they love.",
+    bullets: ["What domestic violence is, in all its forms","How to recognize the signs","Why leaving is so complicated","How to safety plan","Where to find help","What healing looks like"],
+    help: "National Domestic Violence Hotline: 1-800-799-7233. Free, confidential, 24/7.",
+    cta: "Enter this world", url: BASE + "/challenge-page/safe-and-seen-domestic-violence-awareness?programId=a971bc48-f6b4-4e6a-abe2-0255b10c0121"
+  },
+  "addiction-and-recovery": {
+    free: true,
+    title: "Addiction & Recovery", tagline: "Honest ground for the first real day.",
+    art: "images/cosmos-ringed.jpg", chip: "Free entry", alt: "9 steps · self-paced",
+    about: "A free, self-paced course for anyone affected by addiction, whether it is yours or someone you love. No judgment. Just real information and real tools.",
+    bullets: ["The science of addiction","Breaking the cycle","Building support that lasts","Managing triggers","Rebuilding your life","Long-term recovery"],
+    cta: "Enter this world", url: BASE + "/challenge-page/addiction-and-recovery?programId=f07a19b8-2421-4266-9d8f-669e7e977728"
+  },
+  "learning-how-to-build": {
+    free: true,
+    title: "Learning How To Build", tagline: "For the night you decide to build something of your own.",
+    art: "images/cosmos-enlightened.jpg", chip: "Free entry", alt: "Start here",
+    about: "The starting line. Work through the free programs first so your body and your head are steady, then move into the builds in the vault when you are ready to make something of your own.",
+    bullets: ["Start with the free worlds and the program list","Pick one build, not five","Small actions, repeated, beat big plans abandoned","The vault is where the deeper builds live"],
+    cta: "See all programs", url: BASE + "/challenges"
+  },
+  "ai-driven-business": {
+    title: "The AI-Driven Business: 2026 Automation Mastery", tagline: "An automated, AI-powered business that keeps running when you stop.",
+    art: "images/cosmos-ringed.jpg", chip: "$97 · lifetime", alt: "3 modules · video", chip2: "Best value",
+    about: "Stop trading time for money. A step-by-step program for building an automated, AI-powered business with the tools reshaping 2026: ChatGPT, Claude, Wix and Zapier. Set the foundation, then let the machine carry the routine work.",
+    bullets: ["3 modules with step-by-step video lessons and lifetime access","Lead capture and follow-up on autopilot","24/7 virtual support agents","Content and SEO running without you","30-day Results or It's Free guarantee"],
+    cta: "Claim the course · $97", url: BASE + "/_paylink/mv0f13Gzakpe",
+    note: "One payment, lifetime access. Was $497."
+  },
+  "money-power-freedom": {
+    title: "Money, Power & Freedom", tagline: "Money has rules. Freedom is the reward for learning them.",
+    art: "images/cosmos-temple.jpg", chip: "$69 · lifetime", alt: "14 modules · self-paced",
+    about: "Money has rules. Freedom is the reward for learning them. Fourteen modules built for people who were never taught this, from the first credit score to the legacy you leave.",
+    bullets: ["Credit, debt, investing, real estate, taxes","Starting a business with little to nothing","From the mindset to the legacy","14 modules, self-paced, lifetime access"],
+    cta: "Open the vault · $69", url: BASE + "/product-page/money-power-freedom-financial-literacy-for-real-life",
+    note: "One payment, lifetime access. Was $197."
+  }
+};
+
+function cvOpen(slug){
+  var c = COURSES[slug]; if(!c) return false;
+  var cv = document.getElementById('cv');
+  document.getElementById('cvArt').src = c.art;
+  document.getElementById('cvArt').alt = c.title;
+  document.getElementById('cvTitle').textContent = c.title;
+  var chips = '';
+  if(c.chip2) chips += '<span class="cv-chip alt">' + c.chip2 + '</span>';
+  chips += '<span class="cv-chip">' + c.chip + '</span>';
+  chips += '<span class="cv-chip alt">' + c.alt + '</span>';
+  document.getElementById('cvChips').innerHTML = chips;
+  var html = '<p class="lead2">' + c.tagline + '</p>';
+  html += '<h2 class="cv-h">About this course</h2><p class="lead2">' + c.about + '</p>';
+  if(c.bullets && c.bullets.length){
+    html += '<h2 class="cv-h">What is inside</h2><ul class="cv-list">';
+    for(var i=0;i<c.bullets.length;i++){ html += '<li>' + c.bullets[i] + '</li>'; }
+    html += '</ul>';
+  }
+  html += '<div class="cv-cta"><a class="btn btn-primary" href="' + c.url + '" target="_top" rel="noopener">' + c.cta + '</a>';
+  html += '<a class="btn btn-magic" href="#worlds" data-cvclose>Back to all worlds</a></div>';
+  if(c.note) html += '<p class="cv-note">' + c.note + '</p>';
+  if(c.help) html += '<div class="cv-help">' + c.help + '</div>';
+  if(c.free) html += '<div class="cv-give"><p><b>If this world helped you, pay it forward.</b> Every free program here is funded by the people it helped, which is how the next person who cannot afford it still gets in.</p><a class="btn btn-magic" href="' + BASE + '/product-page/donation-support-raising-awareness-together" target="_top" rel="noopener">Pay it forward</a></div>';
+  document.getElementById('cvBody').innerHTML = html;
+  cv.classList.add('open'); cv.setAttribute('aria-hidden','false');
+  document.body.classList.add('cv-lock'); cv.scrollTop = 0;
+  return true;
+}
+function cvClose(){
+  var cv = document.getElementById('cv');
+  cv.classList.remove('open'); cv.setAttribute('aria-hidden','true');
+  document.body.classList.remove('cv-lock');
+}
+function cvRoute(){
+  var h = location.hash || '';
+  var m = h.match(/^#\/(?:world|course)\/([a-z0-9-]+)/i);
+  if(m && COURSES[m[1]]){ cvOpen(m[1]); return; }
+  cvClose();
+}
+window.addEventListener('hashchange', cvRoute);
+document.addEventListener('click', function(e){
+  var a = e.target.closest ? e.target.closest('a') : null;
+  if(!a) return;
+  if(a.hasAttribute('data-cvclose')){ cvClose(); }
+  var href = a.getAttribute('href') || '';
+  var mm = href.match(/^#\/(?:world|course)\/([a-z0-9-]+)/i);
+  if(mm && COURSES[mm[1]]){ e.preventDefault(); location.hash = href; }
+});
+if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', cvRoute); } else { cvRoute(); }
+</script>
+
+<script>
+(function(){
+  var LEAD_API = "https://superagent-d870c2b9.base44.app/functions/siteLead";
+  function setMsg(el, text, cls){ if(!el) return; el.textContent = text; el.className = "form-msg " + (cls || ""); }
+  function wire(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = form.querySelector(".form-msg");
+      var btn = form.querySelector("button[type=submit]");
+      var data = { kind: form.getAttribute("data-kind"), source_page: form.getAttribute("data-source") || "site" };
+      var els = form.querySelectorAll("input, textarea, select");
+      for (var j = 0; j < els.length; j++){
+        var el = els[j];
+        if (!el.name || el.type === "submit") continue;
+        data[el.name] = el.value;
+      }
+      var email = (data.email || "").trim();
+      if (email.indexOf("@") < 1 || email.indexOf(".") < 1){
+        setMsg(msg, "Enter a valid email address.", "err"); return;
+      }
+      if (!data.first_name && !data.course_title){
+        setMsg(msg, "Add your name so we know who we are writing back to.", "err"); return;
+      }
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = "Sending...";
+      setMsg(msg, "", "");
+      fetch(LEAD_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+        .then(function(res){
+          if (res && res.ok){
+            setMsg(msg, form.getAttribute("data-done") || "You are in. Check your inbox.", "ok");
+            var fields = form.querySelectorAll("input, textarea, select");
+            for (var k = 0; k < fields.length; k++){ if (fields[k].type !== "submit") fields[k].value = ""; }
+          } else {
+            setMsg(msg, (res && res.error) || "Something went wrong. Try again.", "err");
+          }
+        })
+        .catch(function(){ setMsg(msg, "Connection failed. Try again in a moment.", "err"); })
+        .then(function(){ btn.disabled = false; btn.textContent = label; });
+    });
+  }
+  var forms = document.querySelectorAll("form.lead-form");
+  for (var i = 0; i < forms.length; i++){ wire(forms[i]); }
+})();
+</script>
+
+<script>
+/* planet carousel for the free worlds */
+(function(){
+  var track = document.getElementById('orbit'); if(!track) return;
+  var cards = track.querySelectorAll('.world');
+  var dots  = document.getElementById('orbitDots');
+  var btns  = document.querySelectorAll('[data-orbit]');
+  for (var i=0;i<cards.length;i++){
+    var d=document.createElement('button');
+    d.className='orbit-dot'+(i===0?' on':'');
+    d.type='button'; d.setAttribute('aria-label','World '+(i+1));
+    (function(n){ d.addEventListener('click',function(){ go(n); }); })(i);
+    dots.appendChild(d);
+  }
+  function step(){ var c=cards[0]; return c ? c.getBoundingClientRect().width + 20 : 300; }
+  function go(n){
+    n=Math.max(0,Math.min(cards.length-1,n));
+    track.scrollTo({left:n*step(),behavior:'smooth'});
+  }
+  function current(){ return Math.round(track.scrollLeft/step()); }
+  function sync(){
+    var n=current();
+    var ds=dots.children;
+    for(var i=0;i<ds.length;i++) ds[i].className='orbit-dot'+(i===n?' on':'');
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){ go(current() + (b.getAttribute('data-orbit')==='next'?1:-1)); });
+  });
+  var t; track.addEventListener('scroll',function(){ clearTimeout(t); t=setTimeout(sync,90); });
+  track.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){ e.preventDefault(); go(current()+1); }
+    if(e.key==='ArrowLeft'){ e.preventDefault(); go(current()-1); }
+  });
+  sync();
+})();
+</script>
+<script>
+/* ===== LIVING COSMOS ===== */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* shooting stars */
+  var cv = document.createElement('canvas'); cv.id='sky';
+  document.body.insertBefore(cv, document.body.firstChild);
+  var ctx = cv.getContext('2d'), W=0, H=0, meteors=[], dpr=Math.min(window.devicePixelRatio||1,2);
+  function size(){ W=cv.width=innerWidth*dpr; H=cv.height=innerHeight*dpr; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
+  size(); addEventListener('resize',size);
+  function spawn(){
+    var fromLeft = Math.random()>.35;
+    meteors.push({
+      x: (fromLeft? -0.1:1.1)*W + Math.random()*W*0.25,
+      y: Math.random()*H*0.55,
+      vx: (fromLeft?1:-1)*(6+Math.random()*5)*dpr,
+      vy: (2.2+Math.random()*2)*dpr,
+      len: (90+Math.random()*130)*dpr,
+      life: 1, hue: [ '#ffffff', '#9FE8FF', '#FFD9A8', '#E3C9FF' ][Math.floor(Math.random()*4)]
+    });
+  }
+  var last=0, acc=0, next=1200;
+  function loop(t){
+    if(!last) last=t;
+    var dt=Math.min(t-last,60); last=t; acc+=dt;
+    if(acc>next){ spawn(); acc=0; next=1800+Math.random()*2600; }
+    ctx.clearRect(0,0,W,H);
+    ctx.lineCap='round';
+    for(var i=meteors.length-1;i>=0;i--){
+      var m=meteors[i];
+      m.x+=m.vx; m.y+=m.vy; m.life-=0.006;
+      var g=ctx.createLinearGradient(m.x,m.y,m.x-m.vx/6*m.len/10,m.y-m.vy/6*m.len/10);
+      g.addColorStop(0,m.hue); g.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.strokeStyle=g; ctx.globalAlpha=Math.max(m.life,0); ctx.lineWidth=2*dpr;
+      ctx.beginPath(); ctx.moveTo(m.x,m.y);
+      ctx.lineTo(m.x-m.vx*(m.len/40), m.y-m.vy*(m.len/40)); ctx.stroke();
+      if(m.life<=0 || m.y>H+200 || m.x<-300 || m.x>W+300) meteors.splice(i,1);
+    }
+    ctx.globalAlpha=1;
+    requestAnimationFrame(loop);
+  }
+  if(!reduce) requestAnimationFrame(loop);
+
+  /* cursor light + sparkles */
+  var glow=document.createElement('div'); glow.className='cursor-glow'; document.body.appendChild(glow);
+  var gx=innerWidth/2, gy=innerHeight/2, tx=gx, ty=gy, sparkT=0;
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    document.body.classList.add('cursor-on');
+    addEventListener('pointermove',function(e){
+      tx=e.clientX; ty=e.clientY;
+      var now=Date.now();
+      if(now-sparkT>55){
+        sparkT=now;
+        var s=document.createElement('div'); s.className='spark';
+        s.style.left=(e.clientX-2)+'px'; s.style.top=(e.clientY-2)+'px';
+        s.style.setProperty('--dx',(Math.random()*30-15)+'px');
+        s.style.setProperty('--dy',(Math.random()*30-6)+'px');
+        document.body.appendChild(s);
+        setTimeout(function(){ s.remove(); },880);
+      }
+    },{passive:true});
+    (function follow(){ gx+=(tx-gx)*0.08; gy+=(ty-gy)*0.08;
+      glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)'; requestAnimationFrame(follow); })();
+  }
+
+  /* scroll reveals */
+  var targets=[].slice.call(document.querySelectorAll('.pad .head, .pad .world, .pad .tier, .pad .card-glow, .pad .sec-banner, .founder .inner, .band .wrap, .med-strip h2, .give .wrap'));
+  if('IntersectionObserver' in window && !reduce){
+    targets.forEach(function(el,i){ el.classList.add('reveal'); el.style.transitionDelay=((i%6)*60)+'ms'; });
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+    targets.forEach(function(el){ io.observe(el); });
+  }
+
+  /* gentle tilt on cards */
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.world, .tier').forEach(function(card){
+      card.addEventListener('mousemove',function(e){
+        var r=card.getBoundingClientRect();
+        var px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+        card.classList.add('tilting');
+        card.style.transform='perspective(900px) rotateX('+(-py*5)+'deg) rotateY('+(px*6)+'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave',function(){ card.classList.remove('tilting'); card.style.transform=''; });
+    });
+  }
+})();
+</script>
+<script>
+/* ===== V2: constellation cursor, click bursts, orbit progress, parallax ===== */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+
+  var br=document.createElement('div'); br.className='breath'; document.body.appendChild(br);
+
+  /* scroll orbit indicator */
+  var ring=document.createElement('div'); ring.className='orbit-progress'; document.body.appendChild(ring);
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    var p=h>0?Math.min(100,Math.max(0,(scrollY/h)*100)):0;
+    ring.style.setProperty('--p',p.toFixed(1));
+    var pl=document.querySelector('.planets');
+    if(pl && !reduce) pl.style.transform='translate3d(0,'+(scrollY*-0.04)+'px,0)';
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* click burst */
+  document.addEventListener('click',function(e){
+    if(reduce) return;
+    for(var i=0;i<14;i++){
+      var s=document.createElement('div'); s.className='burst';
+      s.style.left=(e.clientX-3)+'px'; s.style.top=(e.clientY-3)+'px';
+      var a=(Math.PI*2*i)/14, d=60+Math.random()*90;
+      s.style.transition='transform .9s cubic-bezier(.15,.7,.2,1),opacity .9s';
+      document.body.appendChild(s);
+      requestAnimationFrame(function(el,dx,dy){
+        return function(){ el.style.transform='translate('+dx+'px,'+dy+'px) scale(.3)'; el.style.opacity='0'; };
+      }(s,Math.cos(a)*d,Math.sin(a)*d));
+      setTimeout(function(el){ return function(){ el.remove(); }; }(s),1000);
+    }
+  });
+
+  if(reduce || !hover) return;
+
+  /* constellation cursor */
+  var c=document.createElement('canvas'); c.id='constel'; document.body.appendChild(c);
+  var cx=c.getContext('2d'), pts=[], D=Math.min(devicePixelRatio||1,2);
+  function size(){ c.width=innerWidth*D; c.height=innerHeight*D; c.style.width=innerWidth+'px'; c.style.height=innerHeight+'px'; }
+  size(); addEventListener('resize',size);
+  addEventListener('pointermove',function(e){
+    pts.push({x:e.clientX*D,y:e.clientY*D,life:1});
+    if(pts.length>26) pts.shift();
+  },{passive:true});
+  function draw(){
+    cx.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<pts.length;i++){
+      pts[i].life-=0.014;
+      for(var j=i+1;j<pts.length;j++){
+        var dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<170*D){
+          cx.strokeStyle='rgba(139,92,255,'+(0.22*(1-dist/(170*D))*Math.max(pts[i].life,0))+')';
+          cx.lineWidth=1*D; cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y); cx.stroke();
+        }
+      }
+      cx.fillStyle='rgba(200,235,255,'+Math.max(pts[i].life,0)*0.9+')';
+      cx.beginPath(); cx.arc(pts[i].x,pts[i].y,1.6*D,0,7); cx.fill();
+    }
+    while(pts.length && pts[0].life<=0) pts.shift();
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+<script>
+/* ===== V3: drag the orbit, highlight the world you are facing, gentle drift ===== */
+(function(){
+  var track=document.getElementById('orbit'); if(!track) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards=[].slice.call(track.querySelectorAll('.world'));
+  function step(){ var c=cards[0]; return c? c.getBoundingClientRect().width+20 : 300; }
+  function nearest(){ return Math.max(0,Math.min(cards.length-1,Math.round(track.scrollLeft/step()))); }
+  function mark(){
+    var n=nearest();
+    cards.forEach(function(c,i){ c.classList.toggle('active', i===n); });
+    return n;
+  }
+  var idle=Date.now();
+  track.addEventListener('scroll',function(){ mark(); },{passive:true});
+  mark();
+
+  /* drag to travel */
+  var down=false,sx=0,sl=0,moved=0;
+  track.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0) return;
+    down=true;moved=0;sx=e.clientX;sl=track.scrollLeft;
+    track.classList.add('dragging'); idle=Date.now();
+  });
+  track.addEventListener('pointermove',function(e){
+    if(!down) return;
+    var dx=e.clientX-sx; moved=Math.max(moved,Math.abs(dx));
+    if(moved>4){ track.scrollLeft=sl-dx; e.preventDefault(); }
+  });
+  function end(){
+    if(!down) return; down=false; track.classList.remove('dragging');
+    var n=nearest(); track.scrollTo({left:n*step(),behavior:'smooth'});
+    setTimeout(function(){ if(moved<6) return; mark(); },260);
+    idle=Date.now();
+  }
+  track.addEventListener('pointerup',end);
+  track.addEventListener('pointercancel',end);
+  track.addEventListener('pointerleave',end);
+  track.addEventListener('wheel',function(){ idle=Date.now(); },{passive:true});
+
+  /* drift one world at a time while the section is on screen */
+  if(!reduce){
+    var inView=false;
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){ inView=e.isIntersecting; }); },{threshold:.35}).observe(track);
+    } else { inView=true; }
+    var hovering=false;
+    track.addEventListener('mouseenter',function(){ hovering=true; });
+    track.addEventListener('mouseleave',function(){ hovering=false; });
+    setInterval(function(){
+      if(!inView||hovering||down) return;
+      if(Date.now()-idle<7000) return;
+      var n=nearest()+1;
+      if(n>cards.length-1) n=0;
+      track.scrollTo({left:n*step(),behavior:'smooth'});
+      idle=Date.now();
+    },6800);
+  }
+})();
+</script>
+</body>
+</html>
