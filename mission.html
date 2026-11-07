@@ -15,7 +15,9 @@
     --star:#F3EEFF; --muted:#BCB1DE;
     --gold:#FFCB6B; --gold2:#FF9E3D; --violet:#8B5CFF; --magenta:#FF4FD8; --cyan:#4EE8FF; --emerald:#3BF0B0;
     --max:1160px;
-    --figw:150px; --shipw:240px; --pad:9%; --travel:calc(82cqw - 150px);
+    --figw:150px; --shipw:240px; --pad:9%;
+    --shipStart:calc(var(--pad) + var(--figw)/2 - var(--shipw)/2);
+    --shipEnd:calc(100% - var(--pad) - var(--figw)/2 - var(--shipw)/2);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--void);color:var(--star);font-family:Inter,system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
@@ -80,7 +82,7 @@
   .boss .aura{position:absolute;left:50%;bottom:10%;width:150%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
     background:radial-gradient(circle,rgba(255,203,107,.20),transparent 66%);z-index:-1}
 
-  .ship{position:absolute;top:6%;width:var(--shipw);left:calc(var(--pad) + var(--figw)/2 - var(--shipw)/2);
+  .ship{position:absolute;top:6%;width:var(--shipw);left:var(--shipStart);
     animation:fly 15s cubic-bezier(.6,.02,.35,1) infinite;will-change:transform}
   .ship svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 28px rgba(78,232,255,.35))}
   .beam{position:absolute;left:50%;top:52%;width:58%;height:300px;transform:translateX(-50%);
@@ -100,11 +102,11 @@
     100%{opacity:1;transform:none}
   }
   @keyframes fly{
-    0%,15%{transform:translateX(0)}
-    52%,91%{transform:translateX(var(--travel));opacity:1}
+    0%,15%{left:var(--shipStart);opacity:1}
+    52%,91%{left:var(--shipEnd);opacity:1}
     94%{opacity:0}
-    95%{transform:translateX(0);opacity:0}
-    100%{transform:translateX(0);opacity:1}
+    95%{left:var(--shipStart);opacity:0}
+    100%{left:var(--shipStart);opacity:1}
   }
   @keyframes appear{
     0%,52%{opacity:0;transform:translateY(20px) scale(.5)}
@@ -147,7 +149,7 @@
   footer a:hover{color:var(--cyan)}
 
   @media(max-width:760px){
-    :root{--figw:104px;--shipw:152px;--pad:5%;--travel:calc(90cqw - 104px)}
+    :root{--figw:104px;--shipw:152px;--pad:5%}
     .stage{min-height:400px;height:64vh}
     .beam{height:200px}
     .hero{padding-top:44px}
