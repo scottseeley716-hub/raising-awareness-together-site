@@ -1231,7 +1231,7 @@
       </div>
       <div class="cols">
         <div><h5>Explore</h5><ul><li><a href="#worlds">Free worlds</a></li><li><a href="#mission">Our mission</a></li><li><a href="#courses">Courses</a></li><li><a href="creator-portal.html">Creator portal</a></li><li><a href="#welcome">Free guide</a></li></ul></div>
-        <div><h5>Legal</h5><ul><li><a href="https://www.raisingawarenesstogether.com/blank-2">Terms of Service</a></li><li><a href="https://www.raisingawarenesstogether.com/blank">Privacy Policy</a></li><li><a href="https://www.raisingawarenesstogether.com/blank-3">Refund Policy</a></li><li><a href="creator-portal.html">Creator Agreement</a></li></ul></div>
+        <div><h5>Legal</h5><ul><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="refunds.html">Refund Policy</a></li><li><a href="creator-portal.html">Creator Agreement</a></li></ul></div>
         <div><h5>Support</h5><ul><li><a href="#give">Donate</a></li><li><a href="https://www.raisingawarenesstogether.com/inquiry-services-page">Contact</a></li><li><a href="https://www.raisingawarenesstogether.com/blog">Blog</a></li></ul></div>
       </div>
     </div>
@@ -1383,6 +1383,10 @@ function cvRoute(){
 }
 window.addEventListener('hashchange', cvRoute);
 document.addEventListener('click', function(e){
+  if(window.__ratDragged && Date.now()-window.__ratDragged < 260){
+    if(e.preventDefault) e.preventDefault();
+    return;
+  }
   var a = e.target.closest ? e.target.closest('a') : null;
   if(!a) return;
   if(a.hasAttribute('data-cvclose')){ cvClose(); }
@@ -1649,10 +1653,10 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
   mark();
 
   /* drag to travel */
-  var down=false,sx=0,sl=0,moved=0;
+  var down=false,sx=0,sl=0,moved=0,userTook=false;
   track.addEventListener('pointerdown',function(e){
     if(e.pointerType==='mouse'&&e.button!==0) return;
-    down=true;moved=0;sx=e.clientX;sl=track.scrollLeft;
+    down=true;moved=0;sx=e.clientX;sl=track.scrollLeft;userTook=true;
     track.classList.add('dragging'); idle=Date.now();
   });
   track.addEventListener('pointermove',function(e){
@@ -1662,6 +1666,7 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
   });
   function end(){
     if(!down) return; down=false; track.classList.remove('dragging');
+    if(moved>8){ window.__ratDragged=Date.now(); }
     var n=nearest(); track.scrollTo({left:n*step(),behavior:'smooth'});
     setTimeout(function(){ if(moved<6) return; mark(); },260);
     idle=Date.now();
@@ -1681,7 +1686,7 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
     track.addEventListener('mouseenter',function(){ hovering=true; });
     track.addEventListener('mouseleave',function(){ hovering=false; });
     setInterval(function(){
-      if(!inView||hovering||down) return;
+      if(!inView||hovering||down||userTook) return;
       if(Date.now()-idle<7000) return;
       var n=nearest()+1;
       if(n>cards.length-1) n=0;
