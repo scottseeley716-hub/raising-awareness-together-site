@@ -290,15 +290,21 @@
   .idea p{font-size:13.5px;color:#BDB2DE}
 
   /* ===== the Prime Law, as a quiet background layer on every page ===== */
-  .primelaw{position:fixed;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:16px;padding:0 9vw;text-align:center;pointer-events:none;user-select:none;opacity:.16;mix-blend-mode:screen}
-  .primelaw p{font-family:Cinzel,Georgia,serif;font-size:clamp(13px,1.35vw,19px);line-height:1.95;letter-spacing:.05em;
-    max-width:1080px;color:#EDE6FF;margin:0}
-  .primelaw span{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:#B9AFDB}
+  /* ===== the Prime Law, carried at the foot of every page ===== */
+  body{padding-bottom:76px}
+  .primelaw{position:fixed;left:0;right:0;bottom:0;z-index:55;pointer-events:none;user-select:none;
+    display:flex;flex-direction:column;align-items:center;gap:3px;padding:11px 20px 12px;text-align:center;
+    background:linear-gradient(180deg,rgba(5,2,15,0) 0%,rgba(5,2,15,.72) 42%,rgba(5,2,15,.92) 100%);
+    backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border-top:1px solid rgba(139,92,255,.24)}
+  .primelaw p{margin:0;max-width:1080px;font-family:Cinzel,Georgia,serif;font-size:clamp(10.5px,1.05vw,13.5px);
+    line-height:1.5;letter-spacing:.05em;color:#E4DCFA;text-shadow:0 1px 12px rgba(5,2,15,.95)}
+  .primelaw span{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:8px;letter-spacing:.32em;
+    text-transform:uppercase;color:#A79DCB}
   @media(max-width:760px){
-    .primelaw{opacity:.2;padding:0 8vw;gap:12px}
-    .primelaw p{font-size:12.5px;line-height:1.95}
-    .primelaw span{font-size:8px;letter-spacing:.26em}
+    body{padding-bottom:66px}
+    .primelaw{padding:8px 14px 9px;gap:2px}
+    .primelaw p{font-size:10px;line-height:1.45}
+    .primelaw span{font-size:7px;letter-spacing:.24em}
   }
 </style>
 </head>
