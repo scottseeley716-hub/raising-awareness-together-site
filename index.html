@@ -497,6 +497,30 @@
   .foot a:hover{color:var(--cyan)}
   .divider{background:linear-gradient(90deg,transparent,rgba(139,92,255,.45),transparent)}
   .payline{margin-top:44px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#9C93C4}
+
+  /* ===== PLANET CAROUSEL (worlds) ===== */
+  .worlds.orbit{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding:6px 2px 18px;margin:0 -2px;scrollbar-width:none}
+  .worlds.orbit::-webkit-scrollbar{display:none}
+  .worlds.orbit .world{flex:0 0 clamp(260px,31%,340px);scroll-snap-align:center;min-height:250px;padding:26px 24px 24px;position:relative}
+  .worlds.orbit .world.planet:before{content:"";width:92px;height:92px;border-radius:50%;margin-bottom:16px;display:block;
+    background:var(--planet) center/cover no-repeat;
+    box-shadow:0 0 0 1px rgba(139,92,255,.4),0 0 34px rgba(139,92,255,.45),inset 0 0 26px rgba(5,2,15,.5);
+    animation:spin 40s linear infinite}
+  .worlds.orbit .world.planet:nth-child(2n):before{animation-duration:52s}
+  .worlds.orbit .world.planet:nth-child(3n):before{animation-duration:64s}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .worlds.orbit .world:hover:before{box-shadow:0 0 0 1px rgba(111,233,255,.6),0 0 46px rgba(111,233,255,.45),inset 0 0 26px rgba(5,2,15,.5)}
+  .orbit-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:6px}
+  .orbit-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,92,255,.45);background:rgba(18,10,46,.8);
+    color:#EDE6FF;font-size:15px;cursor:pointer;transition:.25s}
+  .orbit-btn:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 26px rgba(111,233,255,.3)}
+  .orbit-spin{width:44px;height:44px;border-radius:50%;border:1px solid rgba(139,92,255,.3);
+    background:radial-gradient(circle at 34% 30%,rgba(139,92,255,.6),rgba(18,10,46,.9));animation:spin 18s linear infinite}
+  .orbit-dots{display:flex;gap:7px}
+  .orbit-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(139,92,255,.45);transition:.25s}
+  .orbit-dot.on{background:var(--cyan);box-shadow:0 0 12px rgba(111,233,255,.8);width:22px;border-radius:999px}
+  @media(max-width:760px){.worlds.orbit .world{flex:0 0 82%}.worlds.orbit .world.planet:before{width:78px;height:78px}}
 </style>
 </head>
 <body>
@@ -569,31 +593,36 @@
       <p>Pick the world that calls you. Each one is a short guided experience you can finish in a night. No charge, no membership card, nothing between you and the first step.</p>
     </div>
 
-    <div class="worlds">
-      <a class="world w6" href="#/world/nervous-system-reset">
+    <div class="worlds orbit" id="orbit">
+      <a style="--planet:url(images/cosmos-spiral.jpg)" class="world planet w6" href="#/world/nervous-system-reset">
         <div><div class="badge hot">● Most entered</div><h3>3-Day Nervous System Reset</h3><p>Three nights, three short practices. For when your body refuses to settle.</p></div>
       </a>
-      <a class="world w6" href="#/world/crisis-and-suicide-prevention">
+      <a style="--planet:url(images/cosmos-ringed.jpg)" class="world planet w6" href="#/world/crisis-and-suicide-prevention">
         <div><div class="badge free">Free entry</div><h3>Crisis &amp; Suicide Prevention: You Matter</h3><p>What to say, what to do, and how to stay when someone is in the dark.</p></div>
       </a>
-      <a class="world w4" href="#/world/through-the-dark">
+      <a style="--planet:url(images/cosmos-enlightened.jpg)" class="world planet w4" href="#/world/through-the-dark">
         <div><div class="badge free">Free entry</div><h3>Through the Dark</h3><p>Grief and loss, walked through instead of around.</p></div>
       </a>
-      <a class="world w4" href="#/world/calm-in-the-storm">
+      <a style="--planet:url(images/cosmos-islands.jpg)" class="world planet w4" href="#/world/calm-in-the-storm">
         <div><div class="badge free">Free entry</div><h3>Calm in the Storm</h3><p>Anger management that actually works. Heat without wreckage.</p></div>
       </a>
-      <a class="world w4" href="#/world/protect-your-peace">
+      <a style="--planet:url(images/cosmos-hands.jpg)" class="world planet w4" href="#/world/protect-your-peace">
         <div><div class="badge new">New path</div><h3>Protect Your Peace</h3><p>Narcissistic patterns, and how to detach without a war.</p></div>
       </a>
-      <a class="world w4" href="#/world/safe-and-seen">
+      <a style="--planet:url(images/cosmos-temple.jpg)" class="world planet w4" href="#/world/safe-and-seen">
         <div><div class="badge free">Free entry</div><h3>Safe and Seen</h3><p>Recognizing abuse, and finding your way out.</p></div>
       </a>
-      <a class="world w4" href="#/world/addiction-and-recovery">
+      <a style="--planet:url(images/cosmos-portrait.jpg)" class="world planet w4" href="#/world/addiction-and-recovery">
         <div><div class="badge free">Free entry</div><h3>Addiction &amp; Recovery</h3><p>Honest ground for the first real day.</p></div>
       </a>
-      <a class="world w4" href="#/world/learning-how-to-build">
+      <a style="--planet:url(images/cosmos-gathering.jpg)" class="world planet w4" href="#/world/learning-how-to-build">
         <div><div class="badge new">Start here</div><h3>Learning How To Build</h3><p>For the night you decide to build something of your own. The door to the full program list, not a course.</p></div>
       </a>
+    </div>
+    <div class="orbit-nav">
+      <button class="orbit-btn" type="button" data-orbit="prev" aria-label="Previous worlds">&larr;</button>
+      <div class="orbit-dots" id="orbitDots"></div>
+      <button class="orbit-btn" type="button" data-orbit="next" aria-label="More worlds">&rarr;</button>
     </div>
   </div>
 </section>
@@ -989,6 +1018,43 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
   }
   var forms = document.querySelectorAll("form.lead-form");
   for (var i = 0; i < forms.length; i++){ wire(forms[i]); }
+})();
+</script>
+
+<script>
+/* planet carousel for the free worlds */
+(function(){
+  var track = document.getElementById('orbit'); if(!track) return;
+  var cards = track.querySelectorAll('.world');
+  var dots  = document.getElementById('orbitDots');
+  var btns  = document.querySelectorAll('[data-orbit]');
+  for (var i=0;i<cards.length;i++){
+    var d=document.createElement('button');
+    d.className='orbit-dot'+(i===0?' on':'');
+    d.type='button'; d.setAttribute('aria-label','World '+(i+1));
+    (function(n){ d.addEventListener('click',function(){ go(n); }); })(i);
+    dots.appendChild(d);
+  }
+  function step(){ var c=cards[0]; return c ? c.getBoundingClientRect().width + 20 : 300; }
+  function go(n){
+    n=Math.max(0,Math.min(cards.length-1,n));
+    track.scrollTo({left:n*step(),behavior:'smooth'});
+  }
+  function current(){ return Math.round(track.scrollLeft/step()); }
+  function sync(){
+    var n=current();
+    var ds=dots.children;
+    for(var i=0;i<ds.length;i++) ds[i].className='orbit-dot'+(i===n?' on':'');
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){ go(current() + (b.getAttribute('data-orbit')==='next'?1:-1)); });
+  });
+  var t; track.addEventListener('scroll',function(){ clearTimeout(t); t=setTimeout(sync,90); });
+  track.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){ e.preventDefault(); go(current()+1); }
+    if(e.key==='ArrowLeft'){ e.preventDefault(); go(current()-1); }
+  });
+  sync();
 })();
 </script>
 </body>
