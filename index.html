@@ -349,6 +349,33 @@
   .divider{background:linear-gradient(90deg,transparent,#E2DCD1,transparent)}
   .payline{margin-top:44px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A8378}
 
+  /* ===== ART EVERYWHERE (old layout, cosmic artwork page-wide) ===== */
+  body{background:#0B0518 url("images/cosmos-islands.jpg") center center/cover no-repeat fixed}
+  .stars{display:block;opacity:.5}
+  .hero{background:linear-gradient(180deg,rgba(252,251,248,.62) 0%,rgba(249,246,240,.5) 55%,rgba(247,245,239,.72) 100%)}
+  .hero .g-left{width:min(34vw,470px);opacity:.98;left:-6%;top:40%}
+  .hero .g-right{width:min(29vw,400px);opacity:.95;right:-4%;top:4%}
+  .hero h1{text-shadow:0 2px 28px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.6)}
+  .hero .quote,.hero .pill,.hero .micro{background:rgba(255,255,255,.72);backdrop-filter:blur(6px);border-radius:14px}
+  .hero .pill{padding:9px 20px}
+  .hero .quote{padding:16px 22px;border:1px solid rgba(234,229,220,.9)}
+  .hero .micro{padding:8px 14px;display:inline-block}
+  .founder{background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(252,251,248,.72));border-color:rgba(234,229,220,.8);backdrop-filter:blur(4px)}
+  .founder .inner{background:rgba(255,255,255,.72);backdrop-filter:blur(8px);border:1px solid rgba(234,229,220,.9);border-radius:26px;padding:44px 34px;box-shadow:0 30px 80px rgba(22,19,15,.1)}
+  .ticker{background:rgba(243,239,231,.8);backdrop-filter:blur(6px);border-color:rgba(234,229,220,.85)}
+  .pad{position:relative;background:linear-gradient(180deg,rgba(252,251,248,.84),rgba(249,246,240,.8))}
+  .world,.tier,.card-glow{background:rgba(255,255,255,.9);backdrop-filter:blur(6px)}
+  .band{background:rgba(243,239,231,.6)}
+  .band img.bg{opacity:.34}
+  .band:after{background:linear-gradient(100deg,rgba(252,251,248,.86),rgba(252,251,248,.6) 46%,rgba(252,251,248,.24))}
+  .give:after{background:radial-gradient(62% 62% at 50% 46%,rgba(11,5,24,.34),rgba(11,5,24,.86) 78%)}
+  .give h2,.give p,.give .eyebrow{color:#F6F1EA}
+  .med-strip:after{background:radial-gradient(64% 74% at 50% 50%,rgba(11,5,24,.12),rgba(11,5,24,.68))}
+  @media(max-width:900px){
+    body{background-attachment:scroll;background-position:center top}
+    .hero .quote{padding:12px 16px}
+    .founder .inner{padding:32px 22px;border-radius:20px}
+  }
 </style>
 </head>
 <body>
