@@ -552,6 +552,9 @@
     var agree = form.querySelector('input[name="agreement_accepted"]');
     if (agree && !agree.checked){ setMsg(msg, "Please tick the creator terms box so we can keep your submission on record.", "err"); return; }
     data.agreement_accepted = agree && agree.checked ? "yes" : "no";
+    data.terms_accepted_at = new Date().toISOString();
+    // keep the acceptance inside the message too, so it survives any schema change
+    data.message = (data.message || "") + "\n\n[Creator terms accepted: " + data.agreement_accepted + " on " + data.terms_accepted_at + (data.country ? " · country: " + data.country : "") + "]";
     var label = btn.textContent;
     btn.disabled = true; btn.textContent = "Sending...";
     setMsg(msg, "", "");
