@@ -202,6 +202,16 @@
   .cv-more{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan)}
   .cv-more:hover{color:#fff}
   body.cv-lock{overflow:hidden}
+  .cv-steps{list-style:none;counter-reset:s;display:grid;gap:11px;margin-top:4px}
+  .cv-steps.two{grid-template-columns:1fr 1fr;gap:11px 30px}
+  @media(max-width:760px){.cv-steps.two{grid-template-columns:1fr}}
+  .cv-steps li{counter-increment:s;position:relative;padding-left:38px;color:#D6CDF0;font-size:15px}
+  .cv-steps li:before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-size:11px;letter-spacing:.08em;color:var(--gold);font-weight:600}
+  .cv-hub{display:grid;gap:10px;margin-top:6px}
+  .cv-hub a{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border:1px solid rgba(139,92,255,.35);border-radius:14px;background:rgba(26,16,64,.62);font-size:15px;color:#E7DFFF;transition:.24s}
+  .cv-hub a:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(78,232,255,.22);transform:translateY(-1px)}
+  .cv-hub .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:3px}
+
 </style>
 </head>
 <body>
@@ -440,80 +450,134 @@
 var BASE = "https://www.raisingawarenesstogether.com";
 var COURSES = {
   "nervous-system-reset": {
-    title: "3-Day Nervous System Reset", tagline: "Three nights, three short practices. For when your body refuses to settle.",
-    art: "images/hands.jpg", chip: "Free entry", alt: "3 steps · self-paced", chip2: "Most entered",
+    title: "3-Day Nervous System Reset",
+    tagline: "Three nights, three short practices. For when your body refuses to settle.",
+    art: "images/hands.jpg",
+    chip: "Free entry",
+    alt: "3 lessons · self-paced",
+    chip2: "Most entered",
     about: "Feel calmer in five minutes a day. A free three-day mini-course teaching three science-backed ways to steer your own stress response: interrupt a stress spike fast, release held tension from the body, and downshift into deep rest at bedtime. Each day is one short practice you can feel working. No hype, no miracle claims, just well-researched tools from respiratory physiology and somatic practice, explained plainly.",
-    bullets: ["Day 1: interrupt a stress spike in about five minutes","Day 2: release tension the body has been holding","Day 3: downshift into deep rest at bedtime","Built on respiratory physiology and somatic practice, no hype"],
-    cta: "Enter this world", url: BASE + "/challenge-page/3-day-nervous-system-reset?programId=012b4bd5-1a39-4538-add4-e1ad53256161"
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/3-day-nervous-system-reset?programId=012b4bd5-1a39-4538-add4-e1ad53256161",
+    bullets: ["Day 1: interrupt a stress spike in about five minutes", "Day 2: release tension the body has been holding", "Day 3: downshift into deep rest at bedtime", "Built on respiratory physiology and somatic practice, no hype"],
+    steps: ["The Physiological Sigh", "Somatic Grounding", "The Wind-Down Breath"]
   },
   "crisis-and-suicide-prevention": {
-    title: "Crisis & Suicide Prevention: You Matter", tagline: "What to say, what to do, and how to stay when someone is in the dark.",
-    art: "images/burst.jpg", chip: "Free entry", alt: "7 steps · self-paced",
-    about: "A free, self-paced course for anyone who wants to understand mental health crisis, recognize the warning signs, and know what to do, for themselves or for someone they care about. Written with honesty and care.",
-    bullets: ["What a mental health crisis actually is","The warning signs, and how to catch them early","What to say, and what never to say","How to stay with someone in the dark","Where to bring in professional help"],
+    title: "Crisis & Suicide Prevention: You Matter",
+    tagline: "What to say, what to do, and how to stay when someone is in the dark.",
+    art: "images/burst.jpg",
+    chip: "Free entry",
+    alt: "7 lessons · self-paced",
+    about: "A free, self-paced course for anyone who wants to understand mental health crisis, recognize the warning signs, and know what to do, for themselves or for someone they care about. Seven lessons, written with honesty and care.",
     help: "If you are in crisis right now: call or text 988. Free, confidential, 24/7.",
-    cta: "Enter this world", url: BASE + "/challenge-page/crisis-and-suicide-prevention-you-matter?programId=0f12f094-7dd2-4aa0-b317-e64b2f81d539"
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/crisis-and-suicide-prevention-you-matter?programId=0f12f094-7dd2-4aa0-b317-e64b2f81d539",
+    bullets: ["What a mental health crisis actually is", "The warning signs, and how to catch them early", "What to say, and what never to say", "How to stay with someone in the dark", "Where to bring in professional help"],
+    steps: ["Course Overview", "Understanding Mental Health Crisis", "Warning Signs to Watch For", "How to Talk to Someone Who Is Struggling", "What to Do in a Crisis: Step by Step", "You Are Not Alone: Building Connection and Support", "After the Crisis: Healing, Hope, and Moving Forward"]
   },
   "through-the-dark": {
-    title: "Through the Dark: Grief and Loss", tagline: "Grief and loss, walked through instead of around.",
-    art: "images/planets.jpg", chip: "Free entry", alt: "7 steps · self-paced",
-    about: "A free, self-paced course for anyone carrying grief: after death, relationship loss, identity loss, or the many other forms loss takes.",
-    bullets: ["What grief really is, and is not","How to stay present with pain instead of routing around it","Finding meaning when the old meaning is gone","Rebuilding connection","Moving forward without forgetting"],
-    cta: "Enter this world", url: BASE + "/challenge-page/through-the-dark-grief-and-loss?programId=e7b5ac6c-3332-4dc0-aee8-e56a9f52a09e"
+    title: "Through the Dark: Grief and Loss",
+    tagline: "Grief and loss, walked through instead of around.",
+    art: "images/planets.jpg",
+    chip: "Free entry",
+    alt: "7 lessons · self-paced",
+    about: "A free, self-paced course for anyone carrying grief: after death, relationship loss, identity loss, or the many other forms loss takes. Seven lessons that stay with you instead of rushing you.",
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/through-the-dark-grief-and-loss?programId=e7b5ac6c-3332-4dc0-aee8-e56a9f52a09e",
+    bullets: ["What grief really is, and is not", "How to stay present with pain instead of routing around it", "Finding meaning when the old meaning is gone", "Rebuilding connection", "Moving forward without forgetting"],
+    steps: ["Course Overview", "Understanding Grief: It's Not Linear, and That's Okay", "The Many Faces of Loss", "Sitting with the Pain Without Being Destroyed by It", "Finding Meaning After Loss", "Rebuilding Connection with Yourself and Others", "Moving Forward Without Forgetting"]
   },
   "calm-in-the-storm": {
-    title: "Calm in the Storm", tagline: "Anger management that actually works. Heat without wreckage.",
-    art: "images/islands.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    title: "Calm in the Storm",
+    tagline: "Anger management that actually works. Heat without wreckage.",
+    art: "images/islands.jpg",
+    chip: "Free entry",
+    alt: "7 lessons · self-paced",
     about: "A free, self-paced course for anyone who wants to understand and manage their anger. Not suppress it, work with it. Plain language. Real tools. No judgment.",
-    bullets: ["The biology of anger, and why it hijacks you","Your own personal anger cycle","In-the-moment techniques that hold up under pressure","Communication skills that do not escalate","Root causes and long-term change"],
-    cta: "Enter this world", url: BASE + "/challenge-page/calm-in-the-storm-anger-management?programId=1075739c-93e7-4493-8693-5a914f5e91aa"
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/calm-in-the-storm-anger-management?programId=1075739c-93e7-4493-8693-5a914f5e91aa",
+    bullets: ["The biology of anger, and why it hijacks you", "Your own personal anger cycle", "In-the-moment techniques that hold up under pressure", "Communication skills that do not escalate", "Root causes and long-term change"],
+    steps: ["Course Overview", "Understanding Anger: What It Really Is and Why It Happens", "The Anger Cycle and Your Personal Triggers", "In-the-Moment Techniques That Actually Help", "Communication Skills for Difficult Conversations", "Healing the Root Causes of Chronic Anger", "Building a Calmer, Stronger You"]
   },
   "protect-your-peace": {
-    title: "Protect Your Peace", tagline: "Narcissistic patterns, and how to detach without a war.",
-    art: "images/portrait.jpg", chip: "Free entry", alt: "27 steps · self-paced", chip2: "New path",
-    about: "Learn to spot common narcissistic and manipulative patterns, understand different behavior profiles, and take practical steps to set boundaries, reduce contact, and safely detach.",
-    bullets: ["Spot the common narcissistic and manipulative patterns","Understand the different behavior profiles","Set boundaries and reduce contact safely","De-escalation and documentation tactics","Build a personal protection plan","A starting self-check quiz for red flags and risk level"],
-    cta: "Enter this world", url: BASE + "/challenge-page/protect-your-peace?programId=e5779087-cc60-455e-ac68-4c12d0097839"
+    title: "Protect Your Peace",
+    tagline: "Narcissistic patterns, and how to detach without a war.",
+    art: "images/portrait.jpg",
+    chip: "Free entry",
+    alt: "27 lessons · self-paced",
+    chip2: "New path",
+    about: "Learn to spot common narcissistic and manipulative patterns, understand different behavior profiles, and take practical steps to set boundaries, reduce contact, and safely detach. Twenty-seven lessons with knowledge checks and a real safety plan.",
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/protect-your-peace?programId=e5779087-cc60-455e-ac68-4c12d0097839",
+    bullets: ["Spot the common narcissistic and manipulative patterns", "Understand the different behavior profiles", "Set boundaries and reduce contact safely", "De-escalation and documentation tactics", "Build a personal protection plan", "Check-ins to measure what you have learned"],
+    steps: ["Why These Relationships Create Confusion", "Trauma Responses and Intermittent Reinforcement", "Rebuilding Self-Trust", "Introduction to Narcissistic Traits", "Traits and Influence of Narcissism", "Case Studies of Narcissistic Dynamics", "Assessing Your Knowledge on Narcissistic Patterns", "Setting Clear Boundaries", "Strategies for Maintaining Boundaries", "Neutral Communication Practice", "Boundary Skills Check", "Personal Safety and Support Plan", "Safe Detachment Planning", "Safety Planning Check", "Recognizing Patterns and Detaching Safely", "Introduction: Boundaries in Business", "The Importance of Setting Boundaries", "Effective Communication Strategies", "Practicing Boundaries Daily", "Communication and Boundaries Recap", "Introduction to Safety Strategies", "Understanding Safety and Boundaries", "Effective Communication Skills", "Techniques for Emotional Detachment", "Safety and Detachment Knowledge Check", "Rebuilding Confidence and Healthy Standards", "Moving Forward Reflection"]
   },
   "safe-and-seen": {
-    title: "Safe and Seen", tagline: "Recognizing abuse, and finding your way out.",
-    art: "images/temple.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    title: "Safe and Seen",
+    tagline: "Recognizing abuse, and finding your way out.",
+    art: "images/temple.jpg",
+    chip: "Free entry",
+    alt: "7 lessons · self-paced",
     about: "A free, self-paced course covering what domestic violence is in all its forms, how to recognize the signs, why leaving is so complicated, how to safety plan, where to find help, and what healing looks like. Written with care for people in real danger, and for those who want to help someone they love.",
-    bullets: ["What domestic violence is, in all its forms","How to recognize the signs","Why leaving is so complicated","How to safety plan","Where to find help","What healing looks like"],
     help: "National Domestic Violence Hotline: 1-800-799-7233. Free, confidential, 24/7.",
-    cta: "Enter this world", url: BASE + "/challenge-page/safe-and-seen-domestic-violence-awareness?programId=a971bc48-f6b4-4e6a-abe2-0255b10c0121"
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/safe-and-seen-domestic-violence-awareness?programId=a971bc48-f6b4-4e6a-abe2-0255b10c0121",
+    bullets: ["What domestic violence is, in all its forms", "How to recognize the signs", "Why leaving is so complicated", "How to safety plan", "Where to find help", "What healing looks like"],
+    steps: ["Course Overview", "What Is Domestic Violence? Understanding All Its Forms", "Recognizing the Signs", "Why It's So Hard to Leave, and Why That's Not Your Fault", "Safety Planning: Steps You Can Take Right Now", "Finding Help and Building a Support Network", "Rebuilding Your Life: Healing After Abuse"]
   },
   "addiction-and-recovery": {
-    title: "Addiction & Recovery", tagline: "Honest ground for the first real day.",
-    art: "images/hero-meditator.jpg", chip: "Free entry", alt: "9 steps · self-paced",
+    title: "Addiction & Recovery",
+    tagline: "Honest ground for the first real day.",
+    art: "images/hero-meditator.jpg",
+    chip: "Free entry",
+    alt: "7 lessons · self-paced",
     about: "A free, self-paced course for anyone affected by addiction, whether it is yours or someone you love. No judgment. Just real information and real tools.",
-    bullets: ["The science of addiction","Breaking the cycle","Building support that lasts","Managing triggers","Rebuilding your life","Long-term recovery"],
-    cta: "Enter this world", url: BASE + "/challenge-page/addiction-and-recovery?programId=f07a19b8-2421-4266-9d8f-669e7e977728"
-  },
-  "learning-how-to-build": {
-    title: "Learning How To Build", tagline: "For the night you decide to build something of your own.",
-    art: "images/burst.jpg", chip: "Free entry", alt: "Start here",
-    about: "The starting line. Work through the free programs first so your body and your head are steady, then move into the builds in the vault when you are ready to make something of your own.",
-    bullets: ["Start with the free worlds and the program list","Pick one build, not five","Small actions, repeated, beat big plans abandoned","The vault is where the deeper builds live"],
-    cta: "See all programs", url: BASE + "/challenges"
+    cta: "Enter this world",
+    url: BASE + "/challenge-page/addiction-and-recovery?programId=f07a19b8-2421-4266-9d8f-669e7e977728",
+    bullets: ["The science of addiction", "Breaking the cycle", "Building support that lasts", "Managing triggers", "Rebuilding your life", "Long-term recovery"],
+    steps: ["Course Overview", "Understanding Addiction", "The Cycle of Addiction and How to Break It", "Building a Support System", "Triggers, Cravings, and How to Manage Them", "Rebuilding Your Life After Addiction", "Staying the Course: Long-Term Recovery"]
   },
   "ai-driven-business": {
-    title: "The AI-Driven Business: 2026 Automation Mastery", tagline: "An automated, AI-powered business that keeps running when you stop.",
-    art: "images/hero-meditator.jpg", chip: "$97 · lifetime", alt: "3 modules · video", chip2: "Best value",
-    about: "Stop trading time for money. A step-by-step program for building an automated, AI-powered business with the tools reshaping 2026: ChatGPT, Claude, Wix and Zapier. Set the foundation, then let the machine carry the routine work.",
-    bullets: ["3 modules with step-by-step video lessons and lifetime access","Lead capture and follow-up on autopilot","24/7 virtual support agents","Content and SEO running without you","30-day Results or It's Free guarantee"],
-    cta: "Claim the course · $97", url: BASE + "/_paylink/mv0f13Gzakpe",
-    note: "One payment, lifetime access. Was $497."
+    title: "The AI-Driven Business: 2026 Automation Mastery",
+    tagline: "An automated, AI-powered business that keeps running when you stop.",
+    art: "images/hero-meditator.jpg",
+    chip: "$97 · lifetime",
+    alt: "30 lessons · 5 modules",
+    chip2: "Best value",
+    about: "Stop trading time for money. A step-by-step program for building an automated, AI-powered business with the tools reshaping 2026: ChatGPT, Claude, Wix and Zapier. Thirty lessons across five modules, then a thirty-day build sprint that ends with a working agent you can show someone.",
+    note: "One payment, lifetime access. Was $497.",
+    cta: "Claim the course · $97",
+    url: BASE + "/_paylink/mv0f13Gzakpe",
+    bullets: ["5 modules, 24 lessons, 5 knowledge checks, 1 final build", "Lead capture and follow-up on autopilot", "24/7 virtual support agents", "Content and SEO running without you", "30-day Results or It's Free guarantee"],
+    steps: ["What AI Can Automate", "Choosing a Profitable Business Problem", "Ethics, Privacy, and Responsible AI", "Foundations Knowledge Check", "Essential Tools and Accounts", "Prompting Fundamentals", "Create a Repeatable Workflow", "Infrastructure Knowledge Check", "What Makes an AI Agent Useful", "Build a Support Agent", "Build a Sales and Lead-Qualification Agent", "Knowledge Bases, Handoffs, and Testing", "Agent-Building Knowledge Check", "Create a Social Media Content System", "Email Campaigns and Content Repurposing", "Build a Content Calendar", "Marketing Automation Knowledge Check", "Lead Capture and Follow-Up", "Client Onboarding and Scheduling", "Proposals, Reporting, and Workflow Monitoring", "Operations Knowledge Check", "Package AI Services and Choose a Niche", "Pricing and Finding Your First Customers", "Build Recurring Revenue", "Launch Knowledge Check", "Days 1 to 7: Select the Problem and Design the Workflow", "Days 8 to 14: Build the First Version", "Days 15 to 21: Test, Improve, and Add Handoffs", "Days 22 to 30: Launch and Measure", "Final Working-Agent Demonstration"]
   },
   "money-power-freedom": {
-    title: "Money, Power & Freedom", tagline: "Money has rules. Freedom is the reward for learning them.",
-    art: "images/temple.jpg", chip: "$69 · lifetime", alt: "14 modules · self-paced",
+    title: "Money, Power & Freedom",
+    tagline: "Money has rules. Freedom is the reward for learning them.",
+    art: "images/temple.jpg",
+    chip: "$69 · lifetime",
+    alt: "14 modules · self-paced",
     about: "Money has rules. Freedom is the reward for learning them. Fourteen modules built for people who were never taught this, from the first credit score to the legacy you leave.",
-    bullets: ["Credit, debt, investing, real estate, taxes","Starting a business with little to nothing","From the mindset to the legacy","14 modules, self-paced, lifetime access"],
-    cta: "Open the vault · $69", url: BASE + "/product-page/money-power-freedom-financial-literacy-for-real-life",
-    note: "One payment, lifetime access. Was $197."
+    note: "One payment, lifetime access. Was $197.",
+    cta: "Open the vault · $69",
+    url: BASE + "/product-page/money-power-freedom-financial-literacy-for-real-life",
+    bullets: ["Credit, debt, investing, real estate, taxes", "Starting a business with little to nothing", "From the mindset to the legacy", "14 modules, self-paced, lifetime access"],
+    steps: ["Introduction to Personal Finance", "Know Your Numbers", "Your Money Mindset", "Budgeting Without Shame", "Debt: The Good, The Bad and The Predatory", "Credit: Building It From Scratch", "Banking, Accounts and Where to Put Your Money", "Investing 101: Making Your Money Work", "Understanding Taxes and Keeping More of What You Earn", "Debt: A Payoff Strategy That Actually Works", "Homeownership and Real Estate for Regular People", "Starting a Business With Little or No Money", "Generational Wealth: Building Something That Lasts", "Your Freedom Plan: Putting It All Together"]
+  },
+  "learning-how-to-build": {
+    title: "Learning How To Build",
+    tagline: "For the night you decide to build something of your own.",
+    art: "images/burst.jpg",
+    chip: "Free entry",
+    alt: "Start here",
+    about: "The starting line. Steady the body and the head first, then pick one build and stay with it. Start with a world below, and when you are ready to make something of your own, the vault holds the longer builds.",
+    hub: true,
+    bullets: ["Steady yourself first: pick one free world and finish it", "Then pick one build, not five", "Small actions, repeated, beat big plans abandoned", "The vault is where the deeper builds live"]
   }
 };
+
+var WORLD_ORDER = ["nervous-system-reset","crisis-and-suicide-prevention","through-the-dark","calm-in-the-storm","protect-your-peace","safe-and-seen","addiction-and-recovery","ai-driven-business","money-power-freedom"];
+var WORLD_LABEL = {"nervous-system-reset":"Start here","crisis-and-suicide-prevention":"Free","through-the-dark":"Free","calm-in-the-storm":"Free","protect-your-peace":"Free","safe-and-seen":"Free","addiction-and-recovery":"Free","ai-driven-business":"$97","money-power-freedom":"$69"};
 
 function cvOpen(slug){
   var c = COURSES[slug]; if(!c) return false;
@@ -526,16 +590,33 @@ function cvOpen(slug){
   chips += '<span class="cv-chip">' + c.chip + '</span>';
   chips += '<span class="cv-chip alt">' + c.alt + '</span>';
   document.getElementById('cvChips').innerHTML = chips;
+
   var html = '<p class="lead2">' + c.tagline + '</p>';
   html += '<h2 class="cv-h">About this course</h2><p class="lead2">' + c.about + '</p>';
+
+  if(c.steps && c.steps.length){
+    html += '<h2 class="cv-h">Every lesson inside</h2><ol class="cv-steps' + (c.steps.length > 10 ? ' two' : '') + '">';
+    for(var i=0;i<c.steps.length;i++){ html += '<li>' + c.steps[i] + '</li>'; }
+    html += '</ol>';
+  }
   if(c.bullets && c.bullets.length){
-    html += '<h2 class="cv-h">What is inside</h2><ul class="cv-list">';
-    for(var i=0;i<c.bullets.length;i++){ html += '<li>' + c.bullets[i] + '</li>'; }
+    html += '<h2 class="cv-h">What you get</h2><ul class="cv-list">';
+    for(var j=0;j<c.bullets.length;j++){ html += '<li>' + c.bullets[j] + '</li>'; }
     html += '</ul>';
   }
-  html += '<div class="cv-cta"><a class="btn btn-primary" href="' + c.url + '" target="_top" rel="noopener">' + c.cta + '</a>';
-  html += '<a class="btn btn-magic" href="#worlds" data-cvclose>Back to all worlds</a></div>';
-  if(c.note) html += '<p class="cv-note">' + c.note + '</p>';
+  if(c.hub){
+    html += '<h2 class="cv-h">Pick the world that calls you</h2><div class="cv-hub">';
+    for(var k=0;k<WORLD_ORDER.length;k++){
+      var s = WORLD_ORDER[k], w = COURSES[s];
+      html += '<a href="#/world/' + s + '"><span>' + w.title + '</span><span class="k">' + (WORLD_LABEL[s]||'') + '</span></a>';
+    }
+    html += '</div>';
+    html += '<p class="cv-note">Every free world opens with no charge. The vault builds are one payment, lifetime access.</p>';
+  } else {
+    html += '<div class="cv-cta"><a class="btn btn-primary" href="' + c.url + '" target="_top" rel="noopener">' + c.cta + '</a>';
+    html += '<a class="btn btn-magic" href="#worlds" data-cvclose>Back to all worlds</a></div>';
+    if(c.note) html += '<p class="cv-note">' + c.note + '</p>';
+  }
   if(c.help) html += '<div class="cv-help">' + c.help + '</div>';
   document.getElementById('cvBody').innerHTML = html;
   cv.classList.add('open'); cv.setAttribute('aria-hidden','false');
