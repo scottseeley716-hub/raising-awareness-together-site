@@ -57,7 +57,7 @@
   @keyframes drift{from{transform:scale(1.04) translateY(0)}to{transform:scale(1.1) translateY(-14px)}}
   .hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(96deg,rgba(7,2,22,.9) 0%,rgba(7,2,22,.74) 22%,rgba(7,2,22,.34) 42%,rgba(7,2,22,.04) 62%,transparent 78%)}
   .hero:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 50% at 80% 30%,rgba(255,158,61,.16),transparent 60%)}
-  .hero .wrap{position:relative;z-index:2;padding-top:82px}
+  .hero .wrap{position:relative;z-index:2;padding-top:116px}
   .hero-copy{max-width:620px;padding:44px 40px;border-radius:26px;background:linear-gradient(160deg,rgba(9,4,24,.72),rgba(9,4,24,.5));backdrop-filter:blur(9px);border:1px solid rgba(139,92,255,.28);box-shadow:0 30px 90px rgba(7,2,22,.6)}
   .hero h1{font-size:clamp(40px,6vw,78px);margin:20px 0 22px;text-shadow:0 6px 40px rgba(7,2,22,.9)}
   .hero p.lead{font-size:18.5px;color:#D9D0F2;max-width:520px;margin-bottom:36px}
@@ -194,7 +194,7 @@
   .band h3{font-family:Cinzel,serif;font-size:clamp(19px,2.3vw,27px);line-height:1.25}
   .band p{color:var(--muted);font-size:13.5px;margin-top:6px}
 
-  :target{scroll-margin-top:95px}
+  :target{scroll-margin-top:129px}
 
   /* ---- COURSE VIEW ---- */
   .cv{position:fixed;inset:0;z-index:200;background:var(--void);overflow-y:auto;display:none;-webkit-overflow-scrolling:touch}
@@ -224,6 +224,17 @@
   .cv-more{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan)}
   .cv-more:hover{color:#fff}
   body.cv-lock{overflow:hidden}
+
+  /* ---- CRISIS STRIP ---- */
+  .crisisbar{background:rgba(26,16,64,.92);border-top:1px solid rgba(255,79,216,.22);border-bottom:1px solid rgba(255,79,216,.3);padding:9px 18px;text-align:center;font-size:12.5px;color:#D9CFF2;line-height:1.5}
+  .crisisbar a{color:var(--cyan);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .crisisbar a:hover{color:#fff}
+  .cv-crisis{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#FF8EE6;border:1px solid rgba(255,79,216,.45);border-radius:999px;padding:8px 14px;background:rgba(255,79,216,.1);white-space:nowrap}
+  .cv-crisis:hover{color:#fff;border-color:var(--cyan)}
+  .cv-give{margin-top:34px;padding:26px 26px 24px;border-radius:16px;border:1px solid rgba(255,79,216,.42);background:linear-gradient(140deg,rgba(58,20,58,.5),rgba(18,10,46,.92))}
+  .cv-give p{color:#EEDDF5;font-size:14.5px;margin-bottom:18px}
+  @media(max-width:660px){.cv-crisis{display:none}}
+  @media(max-width:900px){.crisisbar{font-size:11.5px;padding:8px 14px}}
 </style>
 </head>
 <body>
@@ -242,6 +253,7 @@
     </nav>
     <a class="btn btn-primary" href="#worlds" style="padding:12px 24px">Enter free</a>
   </div>
+  <div class="crisisbar">In crisis right now? <a href="tel:988">Call or text 988</a> &nbsp;·&nbsp; free, confidential, 24/7 &nbsp;·&nbsp; <a href="https://findahelpline.com" target="_blank" rel="noopener">outside the US</a></div>
 </header>
 
 <main>
@@ -254,20 +266,20 @@
       <p class="eyebrow">Admission is free · Open all night</p>
       <h1>You were never taught the <span class="glow-text">rules</span>. Learn them anyway.</h1>
       <p class="lead">Money, credit, AI, and the business that runs without you. Built for people who were handed nothing and decided to build something.</p>
-      <p class="lead-sub">Step into the light. Stay for the life you build. Eight free worlds for the hard nights, two courses for the climb after, and nothing to buy to walk in.</p>
+      <p class="lead-sub">Step into the light. Stay for the life you build. Seven free worlds for the hard nights, two courses for the climb after, and nothing to buy to walk in.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#worlds">Enter the worlds</a>
         <a class="btn btn-magic" href="#courses">See the vault</a>
       </div>
-      <p class="micro"><b>●</b> 8 free worlds open &nbsp;·&nbsp; <b>●</b> 14 modules in the financial literacy course &nbsp;·&nbsp; <b>●</b> pay what you can, hardship never turned away</p>
+      <p class="micro"><b>●</b> 7 free worlds open &nbsp;·&nbsp; <b>●</b> 2 skill courses, 17 modules &nbsp;·&nbsp; <b>●</b> healing is never sold here</p>
     </div>
   </div>
 </section>
 
 <div class="ticker">
   <div class="ticker-track">
-    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span> Learn How To Build <span>✦</span></div>
-    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span> Learn How To Build <span>✦</span></div>
+    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span></div>
+    <div>3-Day Nervous System Reset <span>✦</span> Crisis &amp; Suicide Prevention <span>✦</span> Grief &amp; Loss <span>✦</span> Anger That Actually Works <span>✦</span> Safe and Seen <span>✦</span> Protect Your Peace <span>✦</span> Addiction &amp; Recovery <span>✦</span></div>
   </div>
 </div>
 
@@ -307,7 +319,7 @@
         <div><div class="badge free">Free entry</div><h3>Addiction &amp; Recovery</h3><p>Honest ground for the first real day.</p></div>
       </a>
       <a class="world w4" href="#/world/learning-how-to-build">
-        <div><div class="badge new">Start here</div><h3>Learning How To Build</h3><p>For the night you decide to build something of your own.</p></div>
+        <div><div class="badge new">Start here</div><h3>Learning How To Build</h3><p>For the night you decide to build something of your own. The door to the full program list, not a course.</p></div>
       </a>
     </div>
   </div>
@@ -482,9 +494,9 @@
   <img src="images/hands.jpg" alt="Hands holding a glowing galaxy">
   <div class="wrap">
     <p class="eyebrow">Pass it forward</p>
-    <h2 style="margin-top:16px">Someone walks in tonight because of you</h2>
-    <p>Every free world, every scholarship, comes out of this. If this place helped you, keep the door open for the next person.</p>
-    <a class="btn btn-primary" href="https://www.raisingawarenesstogether.com/product-page/donation-support-raising-awareness-together">Keep it free</a>
+    <h2 style="margin-top:16px">If this helped, pay it forward</h2>
+    <p>If you like what we are doing, and something on this site helped you, pay it forward. That is what keeps the free courses open for the people who cannot afford them.</p>
+    <a class="btn btn-primary" href="https://www.raisingawarenesstogether.com/product-page/donation-support-raising-awareness-together">Pay it forward</a>
   </div>
 </section>
 </main>
@@ -510,6 +522,7 @@
 <div class="cv" id="cv" aria-hidden="true">
   <div class="cv-top">
     <a class="cv-back" href="#worlds" id="cvBack">&larr; All worlds</a>
+    <a class="cv-crisis" href="tel:988">In crisis? 988</a>
     <a class="cv-brand" href="#top" id="cvBrand"><img src="images/icon.jpg" alt="">Raising Awareness Together</a>
   </div>
   <div class="cv-hero"><img id="cvArt" src="images/temple.jpg" alt=""><div class="inner">
@@ -523,6 +536,7 @@
 var BASE = "https://www.raisingawarenesstogether.com";
 var COURSES = {
   "nervous-system-reset": {
+    free: true,
     title: "3-Day Nervous System Reset", tagline: "Three nights, three short practices. For when your body refuses to settle.",
     art: "images/hands.jpg", chip: "Free entry", alt: "3 steps · self-paced", chip2: "Most entered",
     about: "Feel calmer in five minutes a day. A free three-day mini-course teaching three science-backed ways to steer your own stress response: interrupt a stress spike fast, release held tension from the body, and downshift into deep rest at bedtime. Each day is one short practice you can feel working. No hype, no miracle claims, just well-researched tools from respiratory physiology and somatic practice, explained plainly.",
@@ -530,6 +544,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/3-day-nervous-system-reset?programId=012b4bd5-1a39-4538-add4-e1ad53256161"
   },
   "crisis-and-suicide-prevention": {
+    free: true,
     title: "Crisis & Suicide Prevention: You Matter", tagline: "What to say, what to do, and how to stay when someone is in the dark.",
     art: "images/burst.jpg", chip: "Free entry", alt: "7 steps · self-paced",
     about: "A free, self-paced course for anyone who wants to understand mental health crisis, recognize the warning signs, and know what to do, for themselves or for someone they care about. Written with honesty and care.",
@@ -538,6 +553,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/crisis-and-suicide-prevention-you-matter?programId=0f12f094-7dd2-4aa0-b317-e64b2f81d539"
   },
   "through-the-dark": {
+    free: true,
     title: "Through the Dark: Grief and Loss", tagline: "Grief and loss, walked through instead of around.",
     art: "images/planets.jpg", chip: "Free entry", alt: "7 steps · self-paced",
     about: "A free, self-paced course for anyone carrying grief: after death, relationship loss, identity loss, or the many other forms loss takes.",
@@ -545,6 +561,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/through-the-dark-grief-and-loss?programId=e7b5ac6c-3332-4dc0-aee8-e56a9f52a09e"
   },
   "calm-in-the-storm": {
+    free: true,
     title: "Calm in the Storm", tagline: "Anger management that actually works. Heat without wreckage.",
     art: "images/islands.jpg", chip: "Free entry", alt: "7 steps · self-paced",
     about: "A free, self-paced course for anyone who wants to understand and manage their anger. Not suppress it, work with it. Plain language. Real tools. No judgment.",
@@ -552,6 +569,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/calm-in-the-storm-anger-management?programId=1075739c-93e7-4493-8693-5a914f5e91aa"
   },
   "protect-your-peace": {
+    free: true,
     title: "Protect Your Peace", tagline: "Narcissistic patterns, and how to detach without a war.",
     art: "images/portrait.jpg", chip: "Free entry", alt: "27 steps · self-paced", chip2: "New path",
     about: "Learn to spot common narcissistic and manipulative patterns, understand different behavior profiles, and take practical steps to set boundaries, reduce contact, and safely detach.",
@@ -559,6 +577,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/protect-your-peace?programId=e5779087-cc60-455e-ac68-4c12d0097839"
   },
   "safe-and-seen": {
+    free: true,
     title: "Safe and Seen", tagline: "Recognizing abuse, and finding your way out.",
     art: "images/temple.jpg", chip: "Free entry", alt: "7 steps · self-paced",
     about: "A free, self-paced course covering what domestic violence is in all its forms, how to recognize the signs, why leaving is so complicated, how to safety plan, where to find help, and what healing looks like. Written with care for people in real danger, and for those who want to help someone they love.",
@@ -567,6 +586,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/safe-and-seen-domestic-violence-awareness?programId=a971bc48-f6b4-4e6a-abe2-0255b10c0121"
   },
   "addiction-and-recovery": {
+    free: true,
     title: "Addiction & Recovery", tagline: "Honest ground for the first real day.",
     art: "images/hero-meditator.jpg", chip: "Free entry", alt: "9 steps · self-paced",
     about: "A free, self-paced course for anyone affected by addiction, whether it is yours or someone you love. No judgment. Just real information and real tools.",
@@ -574,6 +594,7 @@ var COURSES = {
     cta: "Enter this world", url: BASE + "/challenge-page/addiction-and-recovery?programId=f07a19b8-2421-4266-9d8f-669e7e977728"
   },
   "learning-how-to-build": {
+    free: true,
     title: "Learning How To Build", tagline: "For the night you decide to build something of your own.",
     art: "images/burst.jpg", chip: "Free entry", alt: "Start here",
     about: "The starting line. Work through the free programs first so your body and your head are steady, then move into the builds in the vault when you are ready to make something of your own.",
@@ -620,6 +641,7 @@ function cvOpen(slug){
   html += '<a class="btn btn-magic" href="#worlds" data-cvclose>Back to all worlds</a></div>';
   if(c.note) html += '<p class="cv-note">' + c.note + '</p>';
   if(c.help) html += '<div class="cv-help">' + c.help + '</div>';
+  if(c.free) html += '<div class="cv-give"><p><b>If this world helped you, pay it forward.</b> Every free program here is funded by the people it helped, which is how the next person who cannot afford it still gets in.</p><a class="btn btn-magic" href="' + BASE + '/product-page/donation-support-raising-awareness-together" target="_top" rel="noopener">Pay it forward</a></div>';
   document.getElementById('cvBody').innerHTML = html;
   cv.classList.add('open'); cv.setAttribute('aria-hidden','false');
   document.body.classList.add('cv-lock'); cv.scrollTop = 0;
