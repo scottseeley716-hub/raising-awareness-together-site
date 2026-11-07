@@ -54,6 +54,21 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,158,61,.28)}
   .btn-ghost{border-color:rgba(243,238,255,.35);color:var(--star);background:rgba(255,255,255,.04)}
   .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  
+  /* mobile menu */
+  .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;
+    border:1px solid rgba(139,92,255,.5);background:rgba(139,92,255,.16);color:#F3EEFF;font-size:19px;line-height:1;cursor:pointer;transition:.25s}
+  .nav-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+  .mobile-nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:59;flex-direction:column;
+    padding:10px 22px 20px;background:rgba(7,2,22,.98);border-bottom:1px solid rgba(139,92,255,.32);backdrop-filter:blur(18px);
+    box-shadow:0 24px 60px rgba(5,2,15,.55)}
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{padding:14px 2px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#DCD3F2;border-bottom:1px solid rgba(139,92,255,.16)}
+  .mobile-nav a:last-of-type{border-bottom:0}
+  .mobile-nav a:hover{color:var(--cyan)}
+  .mobile-nav .btn{margin-top:12px;justify-content:center}
+  @media(max-width:900px){.nav-toggle{display:inline-flex}}
+
   @media(max-width:900px){nav{display:none}}
 
   /* ===== hero ===== */
@@ -171,6 +186,16 @@
       <a href="creator-portal.html">Creator portal</a>
       <a href="index.html#give">Give</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">&#9776;</button>
+    <a class="btn btn-primary" href="index.html#worlds">Enter free</a>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#worlds">Worlds</a>
+    <a href="index.html#courses">Courses</a>
+    <a href="mission.html">Mission</a>
+    <a href="index.html#why">Why</a>
+    <a href="creator-portal.html">Creator portal</a>
+    <a href="index.html#give">Give</a>
     <a class="btn btn-primary" href="index.html#worlds">Enter free</a>
   </div>
 </header>
@@ -354,6 +379,16 @@
     void stage.offsetWidth;
     parts.forEach(function(el){ el.style.animation=''; });
   });
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('navToggle'), m=document.getElementById('mobileNav');
+  if(!b||!m) return;
+  function close(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); b.innerHTML='&#9776;'; }
+  b.addEventListener('click',function(){ var open=m.classList.toggle('open'); b.setAttribute('aria-expanded',open?'true':'false'); b.innerHTML=open?'&times;':'&#9776;'; });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
 })();
 </script>
 </body>
