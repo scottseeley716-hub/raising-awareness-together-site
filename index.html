@@ -173,6 +173,35 @@
   .portrait-card img{width:100%;display:block}
 
   :target{scroll-margin-top:95px}
+
+  /* ---- COURSE VIEW ---- */
+  .cv{position:fixed;inset:0;z-index:200;background:var(--void);overflow-y:auto;display:none;-webkit-overflow-scrolling:touch}
+  .cv.open{display:block}
+  .cv-top{position:sticky;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 28px;background:rgba(7,2,22,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(139,92,255,.28)}
+  .cv-back{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#CBC1E8;border:1px solid rgba(139,92,255,.5);border-radius:999px;padding:9px 18px;transition:.25s}
+  .cv-back:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 24px rgba(78,232,255,.3)}
+  .cv-brand{display:flex;align-items:center;gap:10px;font-family:Cinzel,serif;font-size:13.5px;letter-spacing:.05em;color:#E7DFFF}
+  .cv-brand img{width:28px;height:28px;border-radius:50%;box-shadow:0 0 18px rgba(255,203,107,.5)}
+  .cv-hero{position:relative;height:min(54vh,460px);overflow:hidden;border-bottom:1px solid rgba(139,92,255,.35)}
+  .cv-hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(1.16) brightness(1.05)}
+  .cv-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,2,22,.22),rgba(7,2,22,.94))}
+  .cv-hero .inner{position:absolute;z-index:2;left:0;right:0;bottom:0;max-width:var(--max);margin:0 auto;padding:0 28px 30px}
+  .cv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .cv-chip{font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,203,107,.55);color:var(--gold);background:rgba(255,203,107,.1)}
+  .cv-chip.alt{border-color:rgba(78,232,255,.5);color:var(--cyan);background:rgba(78,232,255,.1)}
+  .cv h1{font-size:clamp(27px,4.3vw,50px);text-shadow:0 14px 50px rgba(7,2,22,.9)}
+  .cv-body{max-width:840px;margin:0 auto;padding:40px 28px 100px}
+  .cv-body .lead2{color:#D6CDF0;font-size:16.5px}
+  .cv-h{font-family:Cinzel,serif;font-size:21px;margin:36px 0 14px;letter-spacing:.01em}
+  .cv-list{list-style:none;display:grid;gap:12px}
+  .cv-list li{position:relative;padding-left:30px;color:#D6CDF0;font-size:15.5px}
+  .cv-list li:before{content:"\2726";position:absolute;left:0;top:0;color:var(--gold)}
+  .cv-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+  .cv-note{margin-top:18px;font-size:13px;color:var(--muted)}
+  .cv-help{margin-top:28px;padding:16px 18px;border-radius:14px;border:1px solid rgba(255,79,216,.45);background:rgba(255,79,216,.09);color:#F5DCF4;font-size:14.5px}
+  .cv-more{display:inline-block;margin-top:16px;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan)}
+  .cv-more:hover{color:#fff}
+  body.cv-lock{overflow:hidden}
 </style>
 </head>
 <body>
@@ -232,28 +261,28 @@
     </div>
 
     <div class="worlds">
-      <a class="world w6" href="https://www.raisingawarenesstogether.com/challenge-page/3-day-nervous-system-reset">
+      <a class="world w6" href="#/world/nervous-system-reset">
         <div><div class="badge hot">● Most entered</div><h3>3-Day Nervous System Reset</h3><p>Three nights, three short practices. For when your body refuses to settle.</p></div>
       </a>
-      <a class="world w6" href="https://www.raisingawarenesstogether.com/challenge-page/crisis-and-suicide-prevention-you-matter">
+      <a class="world w6" href="#/world/crisis-and-suicide-prevention">
         <div><div class="badge free">Free entry</div><h3>Crisis &amp; Suicide Prevention: You Matter</h3><p>What to say, what to do, and how to stay when someone is in the dark.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenge-page/through-the-dark-grief-and-loss">
+      <a class="world w4" href="#/world/through-the-dark">
         <div><div class="badge free">Free entry</div><h3>Through the Dark</h3><p>Grief and loss, walked through instead of around.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenge-page/calm-in-the-storm-anger-management">
+      <a class="world w4" href="#/world/calm-in-the-storm">
         <div><div class="badge free">Free entry</div><h3>Calm in the Storm</h3><p>Anger management that actually works. Heat without wreckage.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenge-page/protect-your-peace">
+      <a class="world w4" href="#/world/protect-your-peace">
         <div><div class="badge new">New path</div><h3>Protect Your Peace</h3><p>Narcissistic patterns, and how to detach without a war.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenge-page/safe-and-seen-domestic-violence-awareness">
+      <a class="world w4" href="#/world/safe-and-seen">
         <div><div class="badge free">Free entry</div><h3>Safe and Seen</h3><p>Recognizing abuse, and finding your way out.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenge-page/addiction-and-recovery">
+      <a class="world w4" href="#/world/addiction-and-recovery">
         <div><div class="badge free">Free entry</div><h3>Addiction &amp; Recovery</h3><p>Honest ground for the first real day.</p></div>
       </a>
-      <a class="world w4" href="https://www.raisingawarenesstogether.com/challenges">
+      <a class="world w4" href="#/world/learning-how-to-build">
         <div><div class="badge new">Start here</div><h3>Learning How To Build</h3><p>For the night you decide to build something of your own.</p></div>
       </a>
     </div>
@@ -287,6 +316,7 @@
           <li>30-day Results or It's Free guarantee</li>
         </ul>
         <a class="btn btn-primary" href="https://www.raisingawarenesstogether.com/_paylink/mv0f13Gzakpe">Claim the course</a>
+        <a class="cv-more" href="#/course/ai-driven-business">See what is inside &rarr;</a>
       </div>
 
       <div class="tier">
@@ -300,6 +330,7 @@
           <li>From the mindset to the legacy</li>
         </ul>
         <a class="btn btn-magic" href="https://www.raisingawarenesstogether.com/product-page/money-power-freedom-financial-literacy-for-real-life">Open the vault</a>
+        <a class="cv-more" href="#/course/money-power-freedom">See what is inside &rarr;</a>
       </div>
     </div>
   </div>
@@ -313,7 +344,7 @@
       <div class="inner">
         <p class="eyebrow">Why this exists</p>
         <h2>Some of us did not get a fair shot</h2>
-        <p style="color:#D6CDF0;font-size:15.5px">We figured things out alone, and now we are building something. No gatekeeping. The climb wasn't easy, and we won't pretend it was.</p>
+        <p style="color:#D6CDF0;font-size:15.5px">We figured things out alone, and now we are building something. No gatekeeping, no pretending the climb was easy.</p>
         <div class="steps">
           <div class="step"><div class="num">1</div><p><b>First, the body.</b> Nervous system, grief, anger, addiction. Nothing else works in survival mode.</p></div>
           <div class="step"><div class="num">2</div><p><b>Then, the money.</b> Credit, debt, taxes, investing, the rules nobody teaches in school.</p></div>
@@ -391,5 +422,147 @@
     <p style="font-size:12px">© 2026 Raising Awareness Together. If you are in crisis, call or text 988.</p>
   </div>
 </footer>
+
+<!-- COURSE VIEW -->
+<div class="cv" id="cv" aria-hidden="true">
+  <div class="cv-top">
+    <a class="cv-back" href="#worlds" id="cvBack">&larr; All worlds</a>
+    <a class="cv-brand" href="#top" id="cvBrand"><img src="images/icon.jpg" alt="">Raising Awareness Together</a>
+  </div>
+  <div class="cv-hero"><img id="cvArt" src="images/temple.jpg" alt=""><div class="inner">
+    <div class="cv-chips" id="cvChips"></div>
+    <h1 id="cvTitle">Course</h1>
+  </div></div>
+  <div class="cv-body" id="cvBody"></div>
+</div>
+
+<script>
+var BASE = "https://www.raisingawarenesstogether.com";
+var COURSES = {
+  "nervous-system-reset": {
+    title: "3-Day Nervous System Reset", tagline: "Three nights, three short practices. For when your body refuses to settle.",
+    art: "images/hands.jpg", chip: "Free entry", alt: "3 steps · self-paced", chip2: "Most entered",
+    about: "Feel calmer in five minutes a day. A free three-day mini-course teaching three science-backed ways to steer your own stress response: interrupt a stress spike fast, release held tension from the body, and downshift into deep rest at bedtime. Each day is one short practice you can feel working. No hype, no miracle claims, just well-researched tools from respiratory physiology and somatic practice, explained plainly.",
+    bullets: ["Day 1: interrupt a stress spike in about five minutes","Day 2: release tension the body has been holding","Day 3: downshift into deep rest at bedtime","Built on respiratory physiology and somatic practice, no hype"],
+    cta: "Enter this world", url: BASE + "/challenge-page/3-day-nervous-system-reset?programId=012b4bd5-1a39-4538-add4-e1ad53256161"
+  },
+  "crisis-and-suicide-prevention": {
+    title: "Crisis & Suicide Prevention: You Matter", tagline: "What to say, what to do, and how to stay when someone is in the dark.",
+    art: "images/burst.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone who wants to understand mental health crisis, recognize the warning signs, and know what to do, for themselves or for someone they care about. Written with honesty and care.",
+    bullets: ["What a mental health crisis actually is","The warning signs, and how to catch them early","What to say, and what never to say","How to stay with someone in the dark","Where to bring in professional help"],
+    help: "If you are in crisis right now: call or text 988. Free, confidential, 24/7.",
+    cta: "Enter this world", url: BASE + "/challenge-page/crisis-and-suicide-prevention-you-matter?programId=0f12f094-7dd2-4aa0-b317-e64b2f81d539"
+  },
+  "through-the-dark": {
+    title: "Through the Dark: Grief and Loss", tagline: "Grief and loss, walked through instead of around.",
+    art: "images/planets.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone carrying grief: after death, relationship loss, identity loss, or the many other forms loss takes.",
+    bullets: ["What grief really is, and is not","How to stay present with pain instead of routing around it","Finding meaning when the old meaning is gone","Rebuilding connection","Moving forward without forgetting"],
+    cta: "Enter this world", url: BASE + "/challenge-page/through-the-dark-grief-and-loss?programId=e7b5ac6c-3332-4dc0-aee8-e56a9f52a09e"
+  },
+  "calm-in-the-storm": {
+    title: "Calm in the Storm", tagline: "Anger management that actually works. Heat without wreckage.",
+    art: "images/islands.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course for anyone who wants to understand and manage their anger. Not suppress it, work with it. Plain language. Real tools. No judgment.",
+    bullets: ["The biology of anger, and why it hijacks you","Your own personal anger cycle","In-the-moment techniques that hold up under pressure","Communication skills that do not escalate","Root causes and long-term change"],
+    cta: "Enter this world", url: BASE + "/challenge-page/calm-in-the-storm-anger-management?programId=1075739c-93e7-4493-8693-5a914f5e91aa"
+  },
+  "protect-your-peace": {
+    title: "Protect Your Peace", tagline: "Narcissistic patterns, and how to detach without a war.",
+    art: "images/portrait.jpg", chip: "Free entry", alt: "27 steps · self-paced", chip2: "New path",
+    about: "Learn to spot common narcissistic and manipulative patterns, understand different behavior profiles, and take practical steps to set boundaries, reduce contact, and safely detach.",
+    bullets: ["Spot the common narcissistic and manipulative patterns","Understand the different behavior profiles","Set boundaries and reduce contact safely","De-escalation and documentation tactics","Build a personal protection plan","A starting self-check quiz for red flags and risk level"],
+    cta: "Enter this world", url: BASE + "/challenge-page/protect-your-peace?programId=e5779087-cc60-455e-ac68-4c12d0097839"
+  },
+  "safe-and-seen": {
+    title: "Safe and Seen", tagline: "Recognizing abuse, and finding your way out.",
+    art: "images/temple.jpg", chip: "Free entry", alt: "7 steps · self-paced",
+    about: "A free, self-paced course covering what domestic violence is in all its forms, how to recognize the signs, why leaving is so complicated, how to safety plan, where to find help, and what healing looks like. Written with care for people in real danger, and for those who want to help someone they love.",
+    bullets: ["What domestic violence is, in all its forms","How to recognize the signs","Why leaving is so complicated","How to safety plan","Where to find help","What healing looks like"],
+    help: "National Domestic Violence Hotline: 1-800-799-7233. Free, confidential, 24/7.",
+    cta: "Enter this world", url: BASE + "/challenge-page/safe-and-seen-domestic-violence-awareness?programId=a971bc48-f6b4-4e6a-abe2-0255b10c0121"
+  },
+  "addiction-and-recovery": {
+    title: "Addiction & Recovery", tagline: "Honest ground for the first real day.",
+    art: "images/hero-meditator.jpg", chip: "Free entry", alt: "9 steps · self-paced",
+    about: "A free, self-paced course for anyone affected by addiction, whether it is yours or someone you love. No judgment. Just real information and real tools.",
+    bullets: ["The science of addiction","Breaking the cycle","Building support that lasts","Managing triggers","Rebuilding your life","Long-term recovery"],
+    cta: "Enter this world", url: BASE + "/challenge-page/addiction-and-recovery?programId=f07a19b8-2421-4266-9d8f-669e7e977728"
+  },
+  "learning-how-to-build": {
+    title: "Learning How To Build", tagline: "For the night you decide to build something of your own.",
+    art: "images/burst.jpg", chip: "Free entry", alt: "Start here",
+    about: "The starting line. Work through the free programs first so your body and your head are steady, then move into the builds in the vault when you are ready to make something of your own.",
+    bullets: ["Start with the free worlds and the program list","Pick one build, not five","Small actions, repeated, beat big plans abandoned","The vault is where the deeper builds live"],
+    cta: "See all programs", url: BASE + "/challenges"
+  },
+  "ai-driven-business": {
+    title: "The AI-Driven Business: 2026 Automation Mastery", tagline: "An automated, AI-powered business that keeps running when you stop.",
+    art: "images/hero-meditator.jpg", chip: "$97 · lifetime", alt: "3 modules · video", chip2: "Best value",
+    about: "Stop trading time for money. A step-by-step program for building an automated, AI-powered business with the tools reshaping 2026: ChatGPT, Claude, Wix and Zapier. Set the foundation, then let the machine carry the routine work.",
+    bullets: ["3 modules with step-by-step video lessons and lifetime access","Lead capture and follow-up on autopilot","24/7 virtual support agents","Content and SEO running without you","30-day Results or It's Free guarantee"],
+    cta: "Claim the course · $97", url: BASE + "/_paylink/mv0f13Gzakpe",
+    note: "One payment, lifetime access. Was $497."
+  },
+  "money-power-freedom": {
+    title: "Money, Power & Freedom", tagline: "Money has rules. Freedom is the reward for learning them.",
+    art: "images/temple.jpg", chip: "$69 · lifetime", alt: "14 modules · self-paced",
+    about: "Money has rules. Freedom is the reward for learning them. Fourteen modules built for people who were never taught this, from the first credit score to the legacy you leave.",
+    bullets: ["Credit, debt, investing, real estate, taxes","Starting a business with little to nothing","From the mindset to the legacy","14 modules, self-paced, lifetime access"],
+    cta: "Open the vault · $69", url: BASE + "/product-page/money-power-freedom-financial-literacy-for-real-life",
+    note: "One payment, lifetime access. Was $197."
+  }
+};
+
+function cvOpen(slug){
+  var c = COURSES[slug]; if(!c) return false;
+  var cv = document.getElementById('cv');
+  document.getElementById('cvArt').src = c.art;
+  document.getElementById('cvArt').alt = c.title;
+  document.getElementById('cvTitle').textContent = c.title;
+  var chips = '';
+  if(c.chip2) chips += '<span class="cv-chip alt">' + c.chip2 + '</span>';
+  chips += '<span class="cv-chip">' + c.chip + '</span>';
+  chips += '<span class="cv-chip alt">' + c.alt + '</span>';
+  document.getElementById('cvChips').innerHTML = chips;
+  var html = '<p class="lead2">' + c.tagline + '</p>';
+  html += '<h2 class="cv-h">About this course</h2><p class="lead2">' + c.about + '</p>';
+  if(c.bullets && c.bullets.length){
+    html += '<h2 class="cv-h">What is inside</h2><ul class="cv-list">';
+    for(var i=0;i<c.bullets.length;i++){ html += '<li>' + c.bullets[i] + '</li>'; }
+    html += '</ul>';
+  }
+  html += '<div class="cv-cta"><a class="btn btn-primary" href="' + c.url + '" target="_top" rel="noopener">' + c.cta + '</a>';
+  html += '<a class="btn btn-magic" href="#worlds" data-cvclose>Back to all worlds</a></div>';
+  if(c.note) html += '<p class="cv-note">' + c.note + '</p>';
+  if(c.help) html += '<div class="cv-help">' + c.help + '</div>';
+  document.getElementById('cvBody').innerHTML = html;
+  cv.classList.add('open'); cv.setAttribute('aria-hidden','false');
+  document.body.classList.add('cv-lock'); cv.scrollTop = 0;
+  return true;
+}
+function cvClose(){
+  var cv = document.getElementById('cv');
+  cv.classList.remove('open'); cv.setAttribute('aria-hidden','true');
+  document.body.classList.remove('cv-lock');
+}
+function cvRoute(){
+  var h = location.hash || '';
+  var m = h.match(/^#\/(?:world|course)\/([a-z0-9-]+)/i);
+  if(m && COURSES[m[1]]){ cvOpen(m[1]); return; }
+  cvClose();
+}
+window.addEventListener('hashchange', cvRoute);
+document.addEventListener('click', function(e){
+  var a = e.target.closest ? e.target.closest('a') : null;
+  if(!a) return;
+  if(a.hasAttribute('data-cvclose')){ cvClose(); }
+  var href = a.getAttribute('href') || '';
+  var mm = href.match(/^#\/(?:world|course)\/([a-z0-9-]+)/i);
+  if(mm && COURSES[mm[1]]){ e.preventDefault(); location.hash = href; }
+});
+if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', cvRoute); } else { cvRoute(); }
+</script>
 </body>
 </html>
