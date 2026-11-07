@@ -545,6 +545,55 @@
     .planets i{animation:none}
     .hero h1,.hero .pill,.hero .quote,.hero .actions,.hero .micro{animation:none}
   }
+
+  /* ===== V2: LEGIBILITY PASS ===== */
+  .hero .quote{background:rgba(8,3,22,.42);border:1px solid rgba(139,92,255,.22);border-radius:18px;padding:22px 26px;backdrop-filter:blur(6px)}
+  .hero .quote strong,.hero .quote b{color:#fff}
+  .head p{color:#D8CFF0}
+  .head h2{text-shadow:0 2px 24px rgba(5,2,15,.85)}
+  .founder .quote{color:#F0EAFF}
+  .founder .inner{background:rgba(8,3,22,.55);border:1px solid rgba(139,92,255,.22);border-radius:20px;padding:34px 30px;backdrop-filter:blur(6px)}
+  .world p{color:#D3C9EE}
+  .tier ul li{color:#D3C9EE}
+  .tier .price small{color:#B7AED6}
+  .step p{color:#D3C9EE}
+  .band h3{text-shadow:0 2px 26px rgba(5,2,15,.9),0 1px 3px rgba(0,0,0,.8)}
+  .band p{color:#E6DDF8;text-shadow:0 1px 14px rgba(5,2,15,.9)}
+  .band:after{background:linear-gradient(100deg,rgba(5,2,15,.95),rgba(5,2,15,.82) 46%,rgba(5,2,15,.55))}
+  .sec-banner .lbl{background:linear-gradient(180deg,rgba(5,2,15,.15),rgba(5,2,15,.82))}
+  .sec-banner .lbl .eyebrow{color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.9)}
+  .med-strip h2{text-shadow:0 2px 24px rgba(5,2,15,.9)}
+  .med-strip p{color:#D8CFF0;text-shadow:0 1px 16px rgba(5,2,15,.8)}
+  .give p,.give h2{text-shadow:0 1px 18px rgba(5,2,15,.85)}
+  .ticker-track{color:#D3C9EE}
+  .crisisbar{color:#CFC5EA}
+  .foot a,.foot li{color:#B7AED6}
+  .card-glow small,.lead-form small{color:#B7AED6}
+  .perks li{color:#D3C9EE}
+  .pl5{left:6%;top:78%;opacity:.22}
+  .planets i{filter:saturate(1.05) blur(.2px)}
+
+  /* breathing light: an 8s inhale/exhale under the fold */
+  .breath{position:fixed;left:50%;top:52%;width:min(1100px,120vw);aspect-ratio:1;transform:translate(-50%,-50%);
+    pointer-events:none;z-index:0;border-radius:50%;
+    background:radial-gradient(circle,rgba(139,92,255,.16),rgba(111,233,255,.06) 42%,transparent 70%);
+    animation:breathe 11s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(.94)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.05)}}
+
+  /* scroll orbit indicator */
+  .orbit-progress{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:50%;z-index:5;
+    background:conic-gradient(var(--cyan) calc(var(--p,0)*1%),rgba(255,255,255,.1) 0);
+    display:grid;place-items:center;box-shadow:0 0 26px rgba(111,233,255,.22);pointer-events:none;transition:opacity .3s}
+  .orbit-progress:before{content:"";width:40px;height:40px;border-radius:50%;background:rgba(6,3,18,.92);border:1px solid rgba(139,92,255,.3)}
+  .orbit-progress:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 14px rgba(111,233,255,.9);top:3px;left:50%;margin-left:-3.5px}
+  @media(max-width:700px){.orbit-progress{width:42px;height:42px;right:14px;bottom:14px}.orbit-progress:before{width:32px;height:32px}}
+
+  /* click burst + constellation canvas */
+  #constel{position:fixed;inset:0;z-index:1;pointer-events:none}
+  .burst{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:6;
+    background:radial-gradient(circle,#fff,rgba(139,92,255,.75) 55%,transparent 72%)}
+  @media(prefers-reduced-motion:reduce){.breath{animation:none}.orbit-progress{display:none}}
 </style>
 </head>
 <body>
@@ -1169,6 +1218,72 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
       card.addEventListener('mouseleave',function(){ card.classList.remove('tilting'); card.style.transform=''; });
     });
   }
+})();
+</script>
+<script>
+/* ===== V2: constellation cursor, click bursts, orbit progress, parallax ===== */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+
+  var br=document.createElement('div'); br.className='breath'; document.body.appendChild(br);
+
+  /* scroll orbit indicator */
+  var ring=document.createElement('div'); ring.className='orbit-progress'; document.body.appendChild(ring);
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    var p=h>0?Math.min(100,Math.max(0,(scrollY/h)*100)):0;
+    ring.style.setProperty('--p',p.toFixed(1));
+    var pl=document.querySelector('.planets');
+    if(pl && !reduce) pl.style.transform='translate3d(0,'+(scrollY*-0.04)+'px,0)';
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* click burst */
+  document.addEventListener('click',function(e){
+    if(reduce) return;
+    for(var i=0;i<14;i++){
+      var s=document.createElement('div'); s.className='burst';
+      s.style.left=(e.clientX-3)+'px'; s.style.top=(e.clientY-3)+'px';
+      var a=(Math.PI*2*i)/14, d=60+Math.random()*90;
+      s.style.transition='transform .9s cubic-bezier(.15,.7,.2,1),opacity .9s';
+      document.body.appendChild(s);
+      requestAnimationFrame(function(el,dx,dy){
+        return function(){ el.style.transform='translate('+dx+'px,'+dy+'px) scale(.3)'; el.style.opacity='0'; };
+      }(s,Math.cos(a)*d,Math.sin(a)*d));
+      setTimeout(function(el){ return function(){ el.remove(); }; }(s),1000);
+    }
+  });
+
+  if(reduce || !hover) return;
+
+  /* constellation cursor */
+  var c=document.createElement('canvas'); c.id='constel'; document.body.appendChild(c);
+  var cx=c.getContext('2d'), pts=[], D=Math.min(devicePixelRatio||1,2);
+  function size(){ c.width=innerWidth*D; c.height=innerHeight*D; c.style.width=innerWidth+'px'; c.style.height=innerHeight+'px'; }
+  size(); addEventListener('resize',size);
+  addEventListener('pointermove',function(e){
+    pts.push({x:e.clientX*D,y:e.clientY*D,life:1});
+    if(pts.length>26) pts.shift();
+  },{passive:true});
+  function draw(){
+    cx.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<pts.length;i++){
+      pts[i].life-=0.014;
+      for(var j=i+1;j<pts.length;j++){
+        var dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<170*D){
+          cx.strokeStyle='rgba(139,92,255,'+(0.22*(1-dist/(170*D))*Math.max(pts[i].life,0))+')';
+          cx.lineWidth=1*D; cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y); cx.stroke();
+        }
+      }
+      cx.fillStyle='rgba(200,235,255,'+Math.max(pts[i].life,0)*0.9+')';
+      cx.beginPath(); cx.arc(pts[i].x,pts[i].y,1.6*D,0,7); cx.fill();
+    }
+    while(pts.length && pts[0].life<=0) pts.shift();
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
 })();
 </script>
 </body>
