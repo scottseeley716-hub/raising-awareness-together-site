@@ -634,6 +634,25 @@
   .badge.new{color:#B4F6FF!important;-webkit-text-fill-color:#B4F6FF!important}
   .nav nav a{color:#CFC5EA!important;-webkit-text-fill-color:#CFC5EA!important}
   .nav nav a:hover{color:#6FE9FF!important;-webkit-text-fill-color:#6FE9FF!important}
+
+  /* ===== V3: orbit feel for both carousels ===== */
+  .worlds.orbit .world{transition:box-shadow .35s,border-color .35s,transform .3s}
+  .worlds.orbit .world.active{border-color:rgba(111,233,255,.55);
+    box-shadow:0 0 0 1px rgba(111,233,255,.25),0 24px 70px rgba(111,233,255,.16),0 10px 40px rgba(5,2,15,.6)}
+  .worlds.orbit .world.active .badge{box-shadow:0 0 22px rgba(111,233,255,.35)}
+  .tiers{position:relative;isolation:isolate}
+  .tiers:before{content:"";position:absolute;left:-8%;right:-8%;top:8%;bottom:-6%;border:1px dashed rgba(139,92,255,.22);
+    border-radius:50%/34%;z-index:-1;animation:orbitTilt 26s ease-in-out infinite alternate}
+  @keyframes orbitTilt{from{transform:rotate(-.6deg) scale(1)}to{transform:rotate(.6deg) scale(1.015)}}
+  .tier.planet:before{content:"";width:78px;height:78px;border-radius:50%;margin:0 0 16px;display:block;
+    background:var(--planet) center/cover no-repeat;
+    box-shadow:0 0 0 1px rgba(139,92,255,.45),0 0 34px rgba(139,92,255,.4),inset 0 0 24px rgba(5,2,15,.45);
+    animation:spin 46s linear infinite}
+  .tier.planet:nth-child(2):before{animation-duration:58s}
+  .tier p{color:#D9D0F2!important;-webkit-text-fill-color:#D9D0F2!important}
+  .worlds.orbit{cursor:grab}
+  .worlds.orbit.dragging{cursor:grabbing;scroll-snap-type:none}
+  .worlds.orbit.dragging .world{pointer-events:none}
 </style>
 </head>
 <body>
@@ -765,7 +784,7 @@
     </div>
 
     <div class="tiers">
-      <div class="tier vip">
+      <div class="tier vip planet" style="--planet:url(images/cosmos-ringed.jpg)">
         <div class="tag">Best value</div>
         <p class="eyebrow" style="color:var(--cyan)">Build</p>
         <h3>The AI-Driven Business: 2026 Automation Mastery</h3>
@@ -781,7 +800,7 @@
         <a class="cv-more" href="#/course/ai-driven-business">See what is inside &rarr;</a>
       </div>
 
-      <div class="tier">
+      <div class="tier planet" style="--planet:url(images/cosmos-spiral.jpg)">
         <p class="eyebrow">Foundation</p>
         <h3>Money, Power &amp; Freedom</h3>
         <p style="color:#5C5750;font-size:14.5px">Money has rules. Freedom is the reward for learning them. 14 modules built for people who were never taught this.</p>
@@ -1324,6 +1343,66 @@ if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoad
     requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
+})();
+</script>
+<script>
+/* ===== V3: drag the orbit, highlight the world you are facing, gentle drift ===== */
+(function(){
+  var track=document.getElementById('orbit'); if(!track) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards=[].slice.call(track.querySelectorAll('.world'));
+  function step(){ var c=cards[0]; return c? c.getBoundingClientRect().width+20 : 300; }
+  function nearest(){ return Math.max(0,Math.min(cards.length-1,Math.round(track.scrollLeft/step()))); }
+  function mark(){
+    var n=nearest();
+    cards.forEach(function(c,i){ c.classList.toggle('active', i===n); });
+    return n;
+  }
+  var idle=Date.now();
+  track.addEventListener('scroll',function(){ mark(); },{passive:true});
+  mark();
+
+  /* drag to travel */
+  var down=false,sx=0,sl=0,moved=0;
+  track.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='mouse'&&e.button!==0) return;
+    down=true;moved=0;sx=e.clientX;sl=track.scrollLeft;
+    track.classList.add('dragging'); idle=Date.now();
+  });
+  track.addEventListener('pointermove',function(e){
+    if(!down) return;
+    var dx=e.clientX-sx; moved=Math.max(moved,Math.abs(dx));
+    if(moved>4){ track.scrollLeft=sl-dx; e.preventDefault(); }
+  });
+  function end(){
+    if(!down) return; down=false; track.classList.remove('dragging');
+    var n=nearest(); track.scrollTo({left:n*step(),behavior:'smooth'});
+    setTimeout(function(){ if(moved<6) return; mark(); },260);
+    idle=Date.now();
+  }
+  track.addEventListener('pointerup',end);
+  track.addEventListener('pointercancel',end);
+  track.addEventListener('pointerleave',end);
+  track.addEventListener('wheel',function(){ idle=Date.now(); },{passive:true});
+
+  /* drift one world at a time while the section is on screen */
+  if(!reduce){
+    var inView=false;
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){ inView=e.isIntersecting; }); },{threshold:.35}).observe(track);
+    } else { inView=true; }
+    var hovering=false;
+    track.addEventListener('mouseenter',function(){ hovering=true; });
+    track.addEventListener('mouseleave',function(){ hovering=false; });
+    setInterval(function(){
+      if(!inView||hovering||down) return;
+      if(Date.now()-idle<7000) return;
+      var n=nearest()+1;
+      if(n>cards.length-1) n=0;
+      track.scrollTo({left:n*step(),behavior:'smooth'});
+      idle=Date.now();
+    },6800);
+  }
 })();
 </script>
 </body>
